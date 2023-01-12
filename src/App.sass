@@ -4,12 +4,7 @@
   font-weight: 400
   src: local("Montserrat"),
   url("./media/fonts/static/Montserrat-Medium.ttf") format('ttf')
-@font-face
-  font-family: "Montserrat-Thin"
-  font-style: normal
-  font-weight: 100
-  src: local("Montserrat"),
-  url("./media/fonts/static/Montserrat-Thin.ttf") format('ttf')
+  font-display: swap
 *
   font-family: 'Montserrat', sans-serif
 h4
@@ -25,7 +20,7 @@ h3
   font-style: normal
   font-weight: 700
   font-size: 16px
-  line-height: 22px
+  text-align: left
   letter-spacing: 3px
   text-transform: uppercase
   color: rgba(255, 255, 255, 0.5)
@@ -35,18 +30,43 @@ h2
   font-style: normal
   font-weight: 700
   font-size: 36px
-  line-height: 44px
+  text-align: left
   text-transform: uppercase
   letter-spacing: 1px
   color: #FFFFFF
   margin: 0
-.title
-  width: 1200px
 p
   font-family: 'Montserrat', sans-serif
   font-style: normal
   font-weight: 400
   font-size: 18px
-  line-height: 26px
   color: #FFFFFF
   margin: 0
+
+@media only screen and (max-width : 1024px)
+  p
+    font-size: 14px
+    line-height: 20px
+  h2
+    font-size: 27px
+  h3
+    font-size: 12px
+  h4
+    font-size: 18px
+  .container
+    width: 800px!important
+
+@media only screen and (max-width : 768px)
+  p
+    font-size: 14px
+  h2
+    font-size: 24px
+  h3
+    font-size: 10px
+  .container
+    width: 600px!important
+
+@media only screen and (max-width : 600px)
+  p
+    font-size: 12px
+

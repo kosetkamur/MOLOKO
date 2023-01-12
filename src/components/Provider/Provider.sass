@@ -1,11 +1,96 @@
+.provider::after
+  background-image: url('../../media/img/sklad.png')
+  background-repeat: no-repeat
+  background-position: center
+  background-size: 804px auto
+  display: inline-block
+  width: 804px
+  height: 948px
+  content: ""
+  position: absolute
+  right: 0
+  top: 0
 .provider
+  position: relative
   background-color: #6793BB
   height: 100vh
+  display: flex
+  align-items: center
   box-sizing: content-box
-  .requirements
-    display: flex
-    flex-direction: row
-    .stock
-      box-sizing: content-box
-      img
-        height: 100vh
+  .container
+    margin: 0 auto
+    width: 1200px
+    position: relative
+    .line
+      position: absolute
+      width: 274.03px
+      height: 0
+      left: -95px
+      top: 327px
+      border: 1px solid #FFFFFF
+      transform: rotate(90deg)
+      z-index: 0
+    .title
+      padding-bottom: 50px
+    .requirements
+      position: relative
+      z-index: 10
+      &__item
+        display: flex
+        flex-direction: row
+        margin-bottom: 55px
+        &_circle:hover
+          color: #455773
+          border: 2px solid #455773
+          transform: scale(1.15)
+          transition: 0.3s
+        &_circle
+          width: 80px
+          height: 80px
+          background: #6793BB
+          border: 2px solid #FFFFFF
+          border-radius: 100px
+          display: flex
+          align-items: center
+          justify-content: center
+          font-family: 'Montserrat',sans-serif
+          font-style: normal
+          font-weight: 500
+          font-size: 40px
+          line-height: 48px
+          color: #FFFFFF
+        &_text
+          width: 305px
+          padding-left: 2%
+          display: flex
+          align-items: center
+
+@media only screen and (max-width : 2560px)
+  .provider
+    height: 90vh
+  .provider::after
+    background-size: 1100px auto
+    width: 1100px
+    height: 100vh
+
+@media only screen and (max-width : 1920px)
+  .provider
+    height: 100vh
+  .provider::after
+    background-size: 804px auto
+    display: inline-block
+    width: 804px
+    height: 948px
+
+@media only screen and (max-width : 1024px)
+  .provider::after
+    width: 50%
+  .provider .container
+    width: 800px
+    .line
+      width: 250px
+      left: -89px
+    .requirements__item_circle
+      width: 70px
+      height: 70px
+      font-size: 30px

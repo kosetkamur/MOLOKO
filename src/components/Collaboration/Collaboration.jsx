@@ -1,11 +1,11 @@
 import React from 'react';
 
 import './Collaboration.sass'
-import arrow from '../../media/img/arrow.png'
+import arrow from '../../media/img/arrow.svg'
 
 const Collaboration = () => {
     return (
-        <section className="collaboration">
+        <section className="collaboration" id="collaboration">
             <div className="container">
                 <div className="title">
                     <h3>
@@ -54,4 +54,4 @@ const Collaboration = () => {
     );
 };
 
-export default Collaboration;
+export default React.memo(Collaboration);

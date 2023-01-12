@@ -1,0 +1,44 @@
+.partners {
+  background-color: #455773;
+  height: 55vh;
+}
+.partners .container {
+  padding-top: 2%;
+  width: 1200px;
+  margin: 0 auto;
+}
+.partners .container .title {
+  width: 100%;
+  padding-bottom: 5%;
+}
+.partners .logos {
+  overflow: hidden;
+}
+.partners .logos__line1 {
+  animation: logos 10s linear infinite;
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+}
+.partners .logos__line1 .logo {
+  margin-right: 50px;
+}
+
+@keyframes logos {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-135%);
+  }
+}
+@media only screen and (max-width: 1440px) {
+  .partners {
+    height: 70vh;
+  }
+  .partners .container {
+    width: 800px;
+  }
+}
+
+/*# sourceMappingURL=Partners.css.map */
