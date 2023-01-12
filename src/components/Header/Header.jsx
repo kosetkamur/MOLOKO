@@ -2,31 +2,23 @@ import React from 'react';
 
 import './Header.sass'
 import logo from '../../media/img/logo.svg'
+import Navigation from "./Navigation/Navigation";
+import BurgerMenu from "./BurgerMenu/BurgerMenu";
 
 const Header = () => {
+    console.log(window.innerWidth)
     return (
         <header>
             <div className="container">
                 <nav className="nav">
                     <div className="nav__logo">
-                        <a href="src/components/Header/Header#">
+                        <a href="#">
                             <img src={logo} alt="Логотип ООО МОЛОКО"/>
                         </a>
                     </div>
-                    <div className="nav__menu">
-                        <div className="nav__menu_item">
-                            <a href="src/components/Header/Header#">Сотрудничество</a>
-                        </div>
-                        <div className="nav__menu_item">
-                            <a href="src/components/Header/Header#">Логистика</a>
-                        </div>
-                        <div className="nav__menu_item">
-                            <a href="src/components/Header/Header#">Новости</a>
-                        </div>
-                        <div className="nav__menu_item">
-                            <a href="src/components/Header/Header#">Контакты</a>
-                        </div>
-                    </div>
+                    {
+                        (window.innerWidth <= 768) ? <BurgerMenu /> : <Navigation />
+                    }
                 </nav>
 
 
@@ -38,13 +30,13 @@ const Header = () => {
                     <p>
                         Продуктов питания и непродовольственных товаров
                     </p>
-                    <button>
+                    <a href="#form">
                         Стать партнёрами
-                    </button>
+                    </a>
                 </section>
             </div>
         </header>
     );
 };
 
-export default Header;
+export default React.memo(Header);

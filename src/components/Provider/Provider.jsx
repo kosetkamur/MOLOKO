@@ -1,27 +1,50 @@
 import React from 'react';
 
 import './Provider.sass'
-import stock from '../../media/img/sklad.png'
 
 const Provider = () => {
     return (
         <div className="provider">
-            <div className="requirements">
+            <div className="container">
+                <div className="line"></div>
                 <div className="title">
                     <h3>
                         Требования к
                     </h3>
                     <h2>
-                        Поставщикам и
+                        Поставщикам и<br />
                         производителям
                     </h2>
                 </div>
-                <div className="stock">
-                    <img src={ stock } alt="склад" />
+                <div className="requirements">
+                    <div className="requirements__item">
+                        <div className="requirements__item_circle">
+                            1
+                        </div>
+                        <p className="requirements__item_text">
+                            Качество и безопасность<br /> предлагаемой продукции
+                        </p>
+                    </div>
+                    <div className="requirements__item">
+                        <div className="requirements__item_circle">
+                            2
+                        </div>
+                        <p className="requirements__item_text">
+                            Качество и безопасность<br /> предлагаемой продукции
+                        </p>
+                    </div>
+                    <div className="requirements__item">
+                        <div className="requirements__item_circle">
+                            3
+                        </div>
+                        <p className="requirements__item_text">
+                            Качество и безопасность<br /> предлагаемой продукции
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Provider;
+export default React.memo(Provider);

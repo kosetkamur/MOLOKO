@@ -1,42 +1,90 @@
 .about-company
   height: 100vh
-  padding: 70px 0
   background: #6793BB
+  padding-top: 8%
   box-sizing: border-box
   .container
     width: 1200px
-    height: auto
     margin: 0 auto
-    .content-about-company
+    .about-company-wrapper
       display: flex
-      flex-direction: row
-      padding-top: 30px
-      .subscribe
-        width: 700px
-        .subtitle
-          width: 500px
-      .facts
-        width: 500px
-        display: grid
-        grid-template-columns: repeat(2,auto)
-        grid-template-rows: repeat(3,auto)
-        &__item
-          width: 200px
-          &_num
-            font-family: 'Montserrat', sans-serif
-            font-style: normal
-            font-weight: 300
-            font-size: 64px
-            line-height: 78px
-            text-align: center
-            color: #FFFFFF
-            margin: 0 0 10px 0
-          &_text
-            font-family: 'Montserrat', sans-serif
-            font-style: normal
-            font-weight: 400
-            font-size: 18px
-            line-height: 26px
-            color: #FFFFFF
-            text-align: center
-            margin: 0 0 24px 0
+      flex-direction: column
+      align-content: center
+      .title
+        width: 100%
+        text-align: left
+        padding-bottom: 5%
+      .content-about-company
+        display: flex
+        flex-direction: row
+        .subscribe
+          width: 58%
+          .subtitle
+            padding-bottom: 7%
+          .map
+            width: 100%
+            max-width: 691px
+        .facts
+          width: 42%
+          padding-left: 50px
+          display: grid
+          grid-template-columns: repeat(2,auto)
+          grid-template-rows: repeat(3,auto)
+          &__item
+            width: 200px
+            padding-bottom: 10%
+            &_num
+              font-family: 'Montserrat', sans-serif
+              font-style: normal
+              font-weight: 300
+              font-size: 64px
+              line-height: 78px
+              text-align: center
+              color: #FFFFFF
+              margin: 0 0 10px 0
+            &_text
+              font-family: 'Montserrat', sans-serif
+              font-style: normal
+              font-weight: 400
+              font-size: 18px
+              line-height: 26px
+              color: #FFFFFF
+              text-align: center
+              margin: 0 0 24px 0
+
+
+
+@media only screen and (max-width : 2560px)
+  .about-company
+    height: 80vh
+    padding-top: 6%
+
+@media only screen and (max-width : 1920px)
+  .about-company
+    height: 100vh
+
+@media only screen and (max-width : 1024px)
+  .about-company
+    height: 85vh
+    .container
+      width: 800px
+
+  .about-company .container .about-company-wrapper .content-about-company .facts__item_num
+    font-size: 48px
+    margin: 0
+  .about-company .container .about-company-wrapper .content-about-company .facts__item_text
+    font-size: 14px
+    margin: 0
+
+
+
+@media only screen and (max-width : 768px)
+  .content-about-company
+    flex-wrap: wrap
+
+  .about-company .container .about-company-wrapper .content-about-company .facts__item_num
+    font-size: 40px
+
+  .about-company .container .about-company-wrapper .content-about-company .subscribe .map
+    width: 60%
+

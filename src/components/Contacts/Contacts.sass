@@ -1,0 +1,33 @@
+#contacts
+  background: #383B48
+  height: 45vh
+  padding-top: 5%
+  box-sizing: border-box
+  .container
+    width: 1200px
+    height: auto
+    margin: 0 auto
+    .contacts
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      margin-bottom: 5%
+      &__item
+        h4
+          margin-bottom: 10%
+        &_phone
+          display: grid
+          grid-template-columns: 180px 100px
+          margin-bottom: 8%
+
+@media only screen and (max-width : 1440px)
+  #contacts
+    height: 50vh
+
+@media only screen and (max-width : 1024px)
+  #contacts
+    height: 45vh
+    .container
+      width: 800px
+      .contacts .contacts__item .contacts__item_phone
+        grid-template-columns: 150px 100px

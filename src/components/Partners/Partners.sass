@@ -1,0 +1,32 @@
+.partners
+  background-color: #455773
+  height: 55vh
+  .container
+    padding-top: 2%
+    width: 1200px
+    margin: 0 auto
+    .title
+      width: 100%
+      padding-bottom: 5%
+  .logos
+    overflow: hidden
+
+    &__line1
+      animation: logos 10s linear infinite
+      display: flex
+      flex-direction: row
+      padding-left: 0
+      .logo
+        margin-right: 50px
+
+@keyframes logos
+  0%
+    transform: translateX(0px)
+  100%
+    transform: translateX(-135%)
+
+@media only screen and (max-width : 1440px)
+  .partners
+    height: 70vh
+    .container
+      width: 800px
