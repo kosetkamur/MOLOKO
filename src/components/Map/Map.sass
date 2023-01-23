@@ -11,7 +11,7 @@
     justify-content: center
     position: absolute
     left: 0
-    top: 0
+    bottom: 0
     z-index: 100
     background: rgba(255, 255, 255, 0.1)
     backdrop-filter: blur(20px)
@@ -43,7 +43,6 @@
 
 @media only screen and (max-width: 1024px)
   .map
-    height: 80vh!important
     .connection
       width: 40%
       .title
@@ -53,3 +52,9 @@
         width: 75%
     .ymap div
       height: 80vh!important
+
+@media only screen and (max-width: 650px)
+  .map
+    .connection
+      height: 50vh
+      width: 100%

@@ -17,7 +17,6 @@ const About = () => {
     }, []);
 
     let facts = data.facts;
-    console.log(facts)
 
     return (
         <section className="about-company">

@@ -1,7 +1,7 @@
 .about-company
   height: 100vh
   background: #6793BB
-  padding-top: 8%
+  padding: 8% 0
   box-sizing: border-box
   .container
     width: 1200px
@@ -65,11 +65,14 @@
 
 @media only screen and (max-width : 1920px)
   .about-company
-    height: 100vh
+    height: 100%
+    padding: 5% 0 5% 0
 
 @media only screen and (max-width : 1250px)
   .about-company .container .about-company-wrapper .content-about-company .facts
     padding-left: 1%
+
+
 
 @media only screen and (max-width : 1024px)
   .about-company
@@ -139,4 +142,8 @@
 @media only screen and (max-width : 600px)
   .about-company .container .about-company-wrapper .content-about-company .facts
     grid-template-columns: repeat(2, 155px)
+
+@media only screen and (max-width : 300px)
+  .about-company .container .about-company-wrapper .content-about-company .facts
+    grid-template-columns: repeat(2, 120px)
 

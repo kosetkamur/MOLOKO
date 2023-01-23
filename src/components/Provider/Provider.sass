@@ -21,57 +21,56 @@
     margin: 0 auto
     width: 1200px
     position: relative
-    .line
-      position: absolute
-      width: 274.03px
-      height: 0
-      left: -95px
-      top: 327px
-      border: 1px solid #FFFFFF
-      transform: rotate(90deg)
-      z-index: 0
-    .title
-      padding-bottom: 50px
-    .requirements
-      position: relative
-      z-index: 10
-      &__item
-        display: flex
-        flex-direction: row
-        margin-bottom: 55px
-        cursor: default
-        &_circle:hover
-          color: #455773
-          border: 2px solid #455773
-          transform: scale(1.15)
-          transition: 0.3s
-          cursor: default
-        &_circle
-          width: 80px
-          height: 80px
-          background: #6793BB
-          border: 2px solid #FFFFFF
-          border-radius: 100px
+    .wrapper
+      .line
+        position: absolute
+        width: 274.03px
+        height: 0
+        left: -95px
+        top: 327px
+        border: 1px solid #FFFFFF
+        transform: rotate(90deg)
+        z-index: 0
+      .title
+        padding-bottom: 50px
+      .requirements
+        position: relative
+        z-index: 10
+        &__item
           display: flex
-          align-items: center
-          justify-content: center
-          font-family: 'Montserrat',sans-serif
-          font-style: normal
-          font-weight: 500
-          font-size: 40px
-          line-height: 48px
-          color: #FFFFFF
+          flex-direction: row
+          margin-bottom: 55px
           cursor: default
-        &_text
-          width: 305px
-          padding-left: 2%
-          display: flex
-          align-items: center
-          cursor: default
+          &_circle:hover
+            color: #455773
+            border: 2px solid #455773
+            transform: scale(1.15)
+            transition: 0.3s
+            cursor: default
+          &_circle
+            width: 80px
+            height: 80px
+            background: #6793BB
+            border: 2px solid #FFFFFF
+            border-radius: 100px
+            display: flex
+            align-items: center
+            justify-content: center
+            font-family: 'Montserrat',sans-serif
+            font-style: normal
+            font-weight: 500
+            font-size: 40px
+            line-height: 48px
+            color: #FFFFFF
+            cursor: default
+          &_text
+            width: 305px
+            padding-left: 2%
+            display: flex
+            align-items: center
+            cursor: default
 
 @media only screen and (max-width : 2560px)
-  .provider::after
-    width: 550px
   .provider
     height: 90vh
   .provider::after
@@ -82,52 +81,37 @@
 @media only screen and (max-width : 1920px)
   .provider::after
     background-size: 804px auto
-    display: inline-block
     width: 804px
-    height: 948px
   .provider
     height: 100vh
-
-@media only screen and (max-width : 820px)
-  .provider
-    height: 90vh
 
 
 @media only screen and (max-width : 1024px)
   .provider::after
-    width: 550px
+    background-size: 500px auto
+    width: 500px
   .provider .container
     width: 800px
-    .line
-      width: 250px
-      left: -89px
-    .requirements__item_circle
-      width: 70px
-      height: 70px
-      font-size: 30px
+    .wrapper
+      .line
+        width: 250px
+        left: -89px
+      .requirements__item_circle
+        width: 70px
+        height: 70px
+        font-size: 30px
+
+@media only screen and (max-width : 900px)
+  .provider::after
+    width: 400px
+
+@media only screen and (max-width : 850px)
+  .provider::after
+    width: 350px
 
 @media only screen and (max-width : 800px)
-  .provider::after
-    width: 50%
   .provider .container
-    width: 800px
-    .line
-      width: 230px
-      left: -84px
-      top: 280px
-    .requirements__item_circle
-      width: 60px
-      height: 60px
-      font-size: 26px
-
-@media only screen and (max-width : 800px)
-  .provider::after
-    width: 50%
-  .provider
-    height: 100%
-    padding: 18% 0
-    .container
-      width: 800px
+    .wrapper
       .line
         width: 230px
         left: -84px
@@ -136,3 +120,21 @@
         width: 60px
         height: 60px
         font-size: 26px
+
+@media only screen and (max-width : 768px)
+  .provider::after
+    width: 0
+    height: 0
+    display: none
+  .provider
+    background-image: url('../../media/img/sklad.png')
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    .container
+      background: rgba(103, 147, 187, 0.9)
+      backdrop-filter: blur(10px)
+      .wrapper
+        width: 70%
+        margin: 20px auto 0 auto
+

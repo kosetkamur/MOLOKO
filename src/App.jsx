@@ -13,6 +13,7 @@ import Contacts from "./components/Contacts";
 
 import GetData from "./api/getData";
 import Maps from "./components/Map/Maps";
+import Catalog from "./components/Catalog/Catalog";
 
 function App() {
   const [ news, setNews ] = useState('');
@@ -29,12 +30,13 @@ function App() {
     <div className="body">
         <Header />
         <About />
+        <Catalog />
         <Collaboration />
         {/*<Provider />*/}
         {/*<Form />*/}
         {/*<Partners />*/}
         {/*/!*<News news={ news }/>*!/*/}
-        {/*<Maps />*/}
+        <Maps />
         {/*<Contacts />*/}
     </div>
   );

@@ -12,7 +12,6 @@ const Maps = () => {
     };
     return (
         <div className="map">
-            <Connection />
             <div className="ymap">
                 <YMaps>
                     <Map defaultState={defaultState}>
@@ -20,6 +19,7 @@ const Maps = () => {
                     </Map>
                 </YMaps>
             </div>
+            <Connection />
         </div>
     );
 };
