@@ -12,3 +12,6 @@ html, body{
 .no-scroll{
     overflow: hidden;
 }
+* {
+    font-family: 'Montserrat', sans-serif;
+}

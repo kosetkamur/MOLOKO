@@ -21,18 +21,21 @@
           width: 58%
           .subtitle
             padding-bottom: 7%
-          .map
+          .mapImage
             width: 100%
             max-width: 691px
         .facts
           width: 42%
-          padding-left: 50px
+          padding-left: 4%
           display: grid
           grid-template-columns: repeat(2,auto)
           grid-template-rows: repeat(3,auto)
           &__item
-            width: 200px
+            flex-direction: column
+            width: 100%
             padding-bottom: 10%
+            display: flex
+            align-items: center
             &_num
               font-family: 'Montserrat', sans-serif
               font-style: normal
@@ -51,6 +54,7 @@
               color: #FFFFFF
               text-align: center
               margin: 0 0 24px 0
+              width: 200px
 
 
 
@@ -63,19 +67,53 @@
   .about-company
     height: 100vh
 
+@media only screen and (max-width : 1250px)
+  .about-company .container .about-company-wrapper .content-about-company .facts
+    padding-left: 1%
+
 @media only screen and (max-width : 1024px)
   .about-company
-    height: 85vh
+    height: 100%
+    padding: 10% 0
     .container
       width: 800px
 
   .about-company .container .about-company-wrapper .content-about-company .facts__item_num
-    font-size: 48px
+    font-size: 54px
     margin: 0
   .about-company .container .about-company-wrapper .content-about-company .facts__item_text
-    font-size: 14px
+    font-size: 16px
     margin: 0
 
+
+
+@media only screen and (max-width : 950px)
+  .about-company
+    .container
+      .about-company-wrapper
+        .content-about-company
+          flex-wrap: wrap
+          align-items: center
+          display: flex
+          .subscribe
+            width: 100%
+            align-items: center
+            display: flex
+            flex-direction: column
+            .subtitle
+              width: 500px
+              display: flex
+              align-self: start
+            .mapImage
+              width: 90%
+              max-width: 691px
+          .facts
+            width: 100%
+            grid-template-columns: repeat(2,240px)
+            justify-content: center
+            margin: 0 auto
+            &__item
+              padding-bottom: 5%
 
 
 @media only screen and (max-width : 768px)
@@ -87,4 +125,18 @@
 
   .about-company .container .about-company-wrapper .content-about-company .subscribe .map
     width: 60%
+
+  .about-company .container .about-company-wrapper .content-about-company .subscribe .subtitle
+    width: 100%
+
+@media only screen and (max-width : 600px)
+  .about-company .container .about-company-wrapper .content-about-company .facts
+    grid-template-columns: repeat(2,180px)
+  .about-company .container .about-company-wrapper .content-about-company .facts__item_text
+    font-size: 12px
+    width: 150px
+
+@media only screen and (max-width : 600px)
+  .about-company .container .about-company-wrapper .content-about-company .facts
+    grid-template-columns: repeat(2, 155px)
 

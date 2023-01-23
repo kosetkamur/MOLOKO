@@ -40,43 +40,6 @@ const Contacts = () => {
                                 <p>Наталья</p>
                             </div>
                         </div>
-                        <div className="contacts__item_phone">
-                            <div className="number">
-                                <p>+7 (963) 109-96-65</p>
-                            </div>
-                            <div className="name">
-                                <p>Игорь</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="contacts__item">
-                        <h4>
-                            Отдел логистики
-                        </h4>
-                        <div className="contacts__item_phone">
-                            <div className="number">
-                                <p>+7 (999) 786-44-36  </p>
-                            </div>
-                            <div className="name">
-                                <p>Наталья</p>
-                            </div>
-                        </div>
-                        <div className="contacts__item_phone">
-                            <div className="number">
-                                <p>+7 (963) 109-96-65</p>
-                            </div>
-                            <div className="name">
-                                <p>Игорь</p>
-                            </div>
-                        </div>
-                        <div className="contacts__item_phone">
-                            <div className="number">
-                                <p>+7 (963) 109-96-65</p>
-                            </div>
-                            <div className="name">
-                                <p>Игорь</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <p className="footer">

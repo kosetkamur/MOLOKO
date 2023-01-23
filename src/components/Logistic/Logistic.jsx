@@ -29,7 +29,7 @@ const Logistic = ({ handleClick }) => {
                         <p>
                             Предоставляем услуги логистики по всей России и странам СНГ, с собственной транспортной сетью. Мы уделяем большое внимание качеству выполняемых услуг, поэтому большинство заказчиков становятся нашими постоянными клиентами. Имеем развитую сеть наработанных маршрутов, которые позволяют доставлять груз в срок.
                         </p>
-                        <button onClick={ buttonClick }>
+                        <button onClick={ buttonClick } className="showBig">
                             Консультация
                         </button>
                     </div>
@@ -44,7 +44,7 @@ const Logistic = ({ handleClick }) => {
                         <div className="logistic__facts_item line">
                             <img src={ icon2 } alt="иконка доллара" />
                             <p>
-                                10 лет<br />
+                                10 лет <br />
                                 профессиональной работы
                             </p>
                         </div>
@@ -56,6 +56,9 @@ const Logistic = ({ handleClick }) => {
                             </p>
                         </div>
                     </div>
+                    <button onClick={ buttonClick } className="showSmall">
+                        Консультация
+                    </button>
                 </div>
             </div>
         </div>
