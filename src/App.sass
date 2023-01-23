@@ -1,51 +1,39 @@
-@font-face
-  font-family: "Montserrat"
-  font-style: normal
-  font-weight: 400
-  src: local("Montserrat"),
-  url("./media/fonts/static/Montserrat-Medium.ttf") format('ttf')
-  font-display: swap
-*
-  font-family: 'Montserrat', sans-serif
+@import "Global"
+
+$value-h4: 600, 24px, #ffffff
 h4
-  font-family: 'Montserrat', sans-serif
-  font-style: normal
-  font-weight: 600
-  font-size: 24px
-  line-height: 28px
-  color: #FFFFFF
-  margin: 0
+  @include fonts($value-h4...)
+
+$value-h3: 700, 16px, rgba(255, 255, 255, 0.5)
 h3
-  font-family: 'Montserrat', sans-serif
-  font-style: normal
-  font-weight: 700
-  font-size: 16px
-  text-align: left
+  @include fonts($value-h3...)
   letter-spacing: 3px
   text-transform: uppercase
-  color: rgba(255, 255, 255, 0.5)
-  margin: 0
+
+$value-h2: 700, 36px, #FFFFFF
 h2
-  font-family: 'Montserrat', sans-serif
-  font-style: normal
-  font-weight: 700
-  font-size: 36px
-  text-align: left
-  text-transform: uppercase
+  @include fonts($value-h2...)
   letter-spacing: 1px
-  color: #FFFFFF
-  margin: 0
+  text-transform: uppercase
+
+$value-p: 400, 18px, #FFFFFF
 p
-  font-family: 'Montserrat', sans-serif
-  font-style: normal
-  font-weight: 400
-  font-size: 18px
-  color: #FFFFFF
-  margin: 0
+  @include fonts($value-p...)
+
+
+.showBig
+  display: block
+
+.showSmall
+  display: none
+
+@media only screen and (max-width : 1250px)
+  .container
+    width: 1000px!important
 
 @media only screen and (max-width : 1024px)
   p
-    font-size: 14px
+    font-size: 16px
     line-height: 20px
   h2
     font-size: 27px
@@ -55,6 +43,14 @@ p
     font-size: 18px
   .container
     width: 800px!important
+
+@media only screen and (max-width : 950px)
+  .showBig
+    display: none
+  .showSmall
+    display: block
+  .container
+    width: 700px!important
 
 @media only screen and (max-width : 768px)
   p
@@ -66,7 +62,30 @@ p
   .container
     width: 600px!important
 
-@media only screen and (max-width : 600px)
+@media only screen and (max-width : 650px)
+  .container
+    width: 500px!important
+  p
+    font-size: 14px
+
+@media only screen and (max-width : 550px)
+  .container
+    width: 450px!important
+
+@media only screen and (max-width : 500px)
+  .container
+    width: 400px!important
   p
     font-size: 12px
+
+@media only screen and (max-width : 450px)
+  .container
+    width: 350px!important
+  p
+    font-size: 12px
+
+
+@media only screen and (max-width : 380px)
+  .container
+    width: 300px!important
 

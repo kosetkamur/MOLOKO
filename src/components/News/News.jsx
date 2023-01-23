@@ -1,16 +1,40 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Slider from "react-slick";
 
 import './News.sass'
+import New from "./New/New";
+import NewPopup from "../NewPopup";
 
 const News = ({ news }) => {
+
+    const [ article, setArticle ] = useState(false);
+    const [ temp, setTemp ] = useState({});
+
+
+    const openArticle = ( data ) => {
+        setArticle(true)
+        setTemp(data)
+    }
+
+    const handleClose = () => {
+        setArticle(false)
+    }
+
+    useEffect(() => {
+        let body = document.querySelector('body');
+        if(article===true){
+            body.className = 'no-scroll'
+        } else {
+            body.classList.remove('no-scroll');
+        }
+    }, [article])
+
     const settings = {
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 1500,
         arrows: false,
-        dots: true,
         pauseOnDotsHover: true,
         pauseOnFocus: true,
         mobileFirst: true,
@@ -21,27 +45,38 @@ const News = ({ news }) => {
                 slidesToShow: 2,
                 slidesToScroll: 1,
                 infinite: true,
-                dots: true,
+                dots: false,
                 autoplay: false,
                 autoplaySpeed: 1500,
             }
             },
             {
-                breakpoint: 600,
+                breakpoint: 950,
                     settings: {
-                slidesToShow: 1,
+                slidesToShow: 2,
                 slidesToScroll: 1,
                 infinite: true,
-                dots: true,
+                dots: false,
                 autoplay: false,
+                autoplaySpeed: 1500,
+            }
+            },
+            {
+                breakpoint: 768,
+                    settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false,
+                autoplay: true,
                 autoplaySpeed: 1500,
             }
             },
         ]
     };
-    console.log(news)
     return (
         <div id="news">
+            { article && <NewPopup  data={ temp } handleClose={ handleClose } /> }
             <div className="container">
                 <div className="news__title title">
                     <h3>
@@ -55,36 +90,12 @@ const News = ({ news }) => {
 
             <div className="news__items">
                 <Slider {...settings}>
-                    <div className="news__items_item">
-                        <h3>12.07.2022</h3>
-                        <h4>«Светофор» открыли более 1100 магазинов</h4>
-                        <p>
-                            Основной партнер ООО «Молоко» сеть дискаунтеров «Светофор» за 2021 год открыла более 1100 магазинов, уступив по этому показателю только «Магниту» и X5 Group партнер ООО «Молоко» сеть «Молоко» сеть дискаунтеров «Светофор» за ООО «Молоко» сеть дискаунтеров «Светофор» за ООО «Молоко» сеть дискаунтеров
-                        </p>
-                    </div>
-                    <div className="news__items_item">
-                        <h3>12.07.2022</h3>
-                        <h4>«Светофор» открыли более 1100 магазинов</h4>
-                        <p>
-                            Основной партнер ООО «Молоко» сеть дискаунтеров «Светофор» за 2021 год открыла более 1100 магазинов, уступив по этому показателю только «Магниту» и X5 Group партнер ООО «Молоко» сеть «Молоко» сеть дискаунтеров «Светофор» за ООО «Молоко» сеть дискаунтеров «Светофор» за ООО «Молоко» сеть дискаунтеров
-                        </p>
-                    </div>
-                    <div className="news__items_item">
-                        <h3>12.07.2022</h3>
-                        <h4>«Светофор» открыли более 1100 магазинов</h4>
-                        <p>
-                            Основной партнер ООО «Молоко» сеть дискаунтеров «Светофор» за 2021 год открыла более 1100 магазинов, уступив по этому показателю только «Магниту» и X5 Group партнер ООО «Молоко» сеть «Молоко» сеть дискаунтеров «Светофор» за ООО «Молоко» сеть дискаунтеров «Светофор» за ООО «Молоко» сеть дискаунтеров
-                        </p>
-                    </div>
-                    <div className="news__items_item">
-                        <h3>12.07.2022</h3>
-                        <h4>«Светофор» открыли более 1100 магазинов</h4>
-                        <p>
-                            Основной партнер ООО «Молоко» сеть дискаунтеров «Светофор» за 2021 год открыла более 1100 магазинов, уступив по этому показателю только «Магниту» и X5 Group партнер ООО «Молоко» сеть «Молоко» сеть дискаунтеров «Светофор» за ООО «Молоко» сеть дискаунтеров «Светофор» за ООО «Молоко» сеть дискаунтеров
-                        </p>
-                    </div>
+                    {
+                        (typeof news == 'object') ? news.map(data => <New data={ data } key={ data.title } openArticle={ openArticle } />) : ""
+                    }
                 </Slider>
             </div>
+
         </div>
     );
 };

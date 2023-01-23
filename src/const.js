@@ -1,0 +1,1 @@
+export const backendHost = 'http://zinchi5d.beget.tech';

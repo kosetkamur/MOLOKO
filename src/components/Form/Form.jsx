@@ -63,8 +63,10 @@ const Form = () => {
                                 <input type='text' name='comment' placeholder='Ваш комментарий' className="form-input" />
                             </div>
                         </div>
-                        <input type='submit' name='submit' value='Отправить заявку' className="form-submit" />
-                        <p className='agree'>Нажимая кнопку отправки, вы даете согласие на обработку своих персональных данных</p>
+                        <div className="form-submit">
+                            <input type='submit' name='submit' value='Отправить заявку' />
+                            <p className='agree'>Нажимая кнопку отправки, вы даете согласие на обработку своих персональных данных</p>
+                        </div>
                     </form>
                 </div>
             </div>

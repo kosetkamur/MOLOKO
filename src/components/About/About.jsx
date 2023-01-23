@@ -1,35 +1,23 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import './About.sass'
 import map from '../../media/img/map.svg'
+import GetAbout from "../../api/getAbout";
+import Fact from "./Fact/Fact";
 
 const About = () => {
 
-    // const [ num, setNum ] = useState([0, 0, 0, 0, 0, 0]);
-    //
-    // const txt = document.querySelectorAll('[data-num]');
-    //
-    // txt.forEach((item, index) => {
-    //     let maxNum = item.dataset.num;
-    //     let start = 0;
-    //
-    //     let fun = setInterval(function () {
-    //         if(maxNum > 1000) {
-    //             start += 200;
-    //         }
-    //         if(maxNum > 20 && maxNum < 1000) {
-    //             start += 10;
-    //         }
-    //         if(maxNum > 1 && maxNum <= 20) {
-    //             start += 1;
-    //         }
-    //         if (start === Number(maxNum)) {
-    //             clearInterval(fun);
-    //         }
-    //         setNum(() => num[index]=start)
-    //     }, 20);
-    // })
+    const [ data, setData ] = useState('');
 
+    useEffect(() => {
+        GetAbout.GetContent().then(resp => {
+            setData(resp);
+            console.log(resp)
+        });
+    }, []);
+
+    let facts = data.facts;
+    console.log(facts)
 
     return (
         <section className="about-company">
@@ -40,43 +28,20 @@ const About = () => {
                             О компании
                         </h3>
                         <h2>
-                            ООО «МОЛОКО»
+                            { data.name }
                         </h2>
                     </div>
                     <div className="content-about-company">
                         <div className="subscribe">
                             <p className="subtitle">
-                                Опорный дистрибьютор молочной продукции эконом-сегмента
-                                для Юга РФ и Сибири. С 2021 года вышел на рынок СТМ с
-                                собственным брендом консервной продукции.
+                                { data.description }
                             </p>
-                            <img src={map} alt="Карта покупателей и поставщиков" className="map"/>
+                            <img src={map} alt="Карта покупателей и поставщиков" className="mapImage"/>
                         </div>
                         <div className="facts">
-                            <div className="facts__item">
-                                <p className="facts__item_num num1" data-num="5">0</p>
-                                <p className="facts__item_text">место по объему розничной выручки</p>
-                            </div>
-                            <div className="facts__item">
-                                <p className="facts__item_num num2" data-num="10">0</p>
-                                <p className="facts__item_text">место по объему розничной выручки</p>
-                            </div>
-                            <div className="facts__item">
-                                <p className="facts__item_num" data-num="3800">0</p>
-                                <p className="facts__item_text">место по объему розничной выручки</p>
-                            </div>
-                            <div className="facts__item">
-                                <p className="facts__item_num" data-num="12">0</p>
-                                <p className="facts__item_text">место по объему розничной выручки</p>
-                            </div>
-                            <div className="facts__item">
-                                <p className="facts__item_num" data-num="20">0</p>
-                                <p className="facts__item_text">место по объему розничной выручки</p>
-                            </div>
-                            <div className="facts__item">
-                                <p className="facts__item_num" data-num="100">0</p>
-                                <p className="facts__item_text">место по объему розничной выручки</p>
-                            </div>
+                            {
+                                (typeof facts == 'object') ? data.facts.map((item, index) => <Fact fact={ item } key={ index } />) : ""
+                            }
                         </div>
                     </div>
                 </div>

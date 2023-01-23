@@ -1,7 +1,7 @@
 #contacts
   background: #383B48
-  height: 45vh
-  padding-top: 5%
+  height: 100%
+  padding: 4% 0 2% 0
   box-sizing: border-box
   .container
     width: 1200px
@@ -10,24 +10,38 @@
     .contacts
       display: flex
       flex-direction: row
-      justify-content: space-between
+      justify-content: center
       margin-bottom: 5%
       &__item
+        margin-right: 15%
         h4
           margin-bottom: 10%
         &_phone
           display: grid
           grid-template-columns: 180px 100px
           margin-bottom: 8%
+          .number a
+            text-decoration: none
+            color: white
 
-@media only screen and (max-width : 1440px)
-  #contacts
-    height: 50vh
+
+
 
 @media only screen and (max-width : 1024px)
   #contacts
-    height: 45vh
     .container
       width: 800px
-      .contacts .contacts__item .contacts__item_phone
-        grid-template-columns: 150px 100px
+
+
+@media only screen and (max-width : 950px)
+  #contacts
+    padding-top: 8%
+    .container
+      width: 700px
+
+
+@media only screen and (max-width : 820px)
+  #contacts .container .contacts .contacts__item .contacts__item_phone
+    grid-template-columns: 140px 80px
+  #contacts .container .contacts .contacts__item .contacts__item_phone p
+    font-size: 14px!important

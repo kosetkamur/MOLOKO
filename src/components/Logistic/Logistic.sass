@@ -68,17 +68,44 @@
     height: 85vh
     .container
       width: 800px
-      .logistic__description
-        padding-bottom: 13%
-        p
-          width: 50%
-        button
-          width: 350px
-      .logistic__facts_item:hover p
-        font-size: 15px
-      .logistic__facts_item
-        height: 130px
-        img
-          width: 70px
+      .logistic
+        &__description
+          padding-bottom: 13%
+          p
+            width: 50%
+          button
+            width: 350px
+        &__facts_item:hover p
+          font-size: 15px
+        &__facts_item
+          height: 130px
+          img
+            width: 70px
+        &__facts
+          &_item
+            width: 250px
+
+@media only screen and (max-width : 950px)
+  #logistic
+    .container
+      .logistic
+        &__description
+          p
+            width: 100%
+      .logistic__facts .line
+        width: 373px
+      button:hover
+        background-color: #6793BB
+        transition: 0.3s
+      button
+        padding: 24px 64px 23px
+        width: 390px
+        height: 69px
+        background-color: #455773
+        border: none
+        font-weight: 600
+        font-size: 18px
+        color: #FFFFFF
+        margin: 10% auto
 
 

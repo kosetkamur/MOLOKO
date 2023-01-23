@@ -36,15 +36,18 @@
 .form-cooperation .form .form-container form {
   display: flex;
   flex-direction: column;
+}
+.form-cooperation .form .form-container form .form-submit {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
-.form-cooperation .form .form-container form .form-submit:hover {
+.form-cooperation .form .form-container form .form-submit input:hover {
   background-color: #6793BB;
   transition: 0.3s;
 }
-.form-cooperation .form .form-container form .form-submit {
-  display: flex;
-  justify-content: center;
+.form-cooperation .form .form-container form .form-submit input {
   padding: 24px 64px 23px;
   width: 390px;
   height: 69px;
@@ -54,7 +57,7 @@
   font-size: 18px;
   color: #FFFFFF;
 }
-.form-cooperation .form .form-container form p {
+.form-cooperation .form .form-container form .form-submit p {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -157,12 +160,53 @@
     margin-left: -462px;
   }
 }
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 1250px) {
   .form-cooperation {
     height: 85vh;
   }
   .form-cooperation .form {
-    margin-left: -451px;
+    margin-left: -450px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .form-cooperation {
+    height: 85vh;
+  }
+  .form-cooperation .form {
+    margin-left: -450px;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .form-cooperation {
+    height: 100vh;
+  }
+  .form-cooperation .form {
+    width: 650px;
+    margin-left: -378px;
+  }
+  .form-cooperation .form .form-container {
+    width: 700px;
+  }
+  .form-cooperation .form .form-container form .form-items {
+    grid-template-columns: repeat(2, 350px);
+  }
+  .form-cooperation .form .form-container form .form-items__item .form-input {
+    width: 300px;
+  }
+  .form-cooperation .form .form-container form .form-items__item .field__file-fake {
+    width: 295px;
+  }
+  .form-cooperation .form .form-container form .form-items__item .field__file-button {
+    right: 44px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .form-cooperation .form {
+    width: 640px;
+    margin-left: -376px;
+  }
+  .form-cooperation .form .form-container {
+    width: 500px;
   }
 }
 

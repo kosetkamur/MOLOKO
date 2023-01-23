@@ -3,7 +3,8 @@
  * 6 |   url("./media/fonts/static/Montserrat-Medium.ttf") format("ttf")
  *   |      ^
  *   '
- *   App.sass 6:6  root stylesheet */
+ *   Global.sass 6:6  @import
+ *   App.sass 1:9     root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -13,5 +14,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: 'Error: expected selector.\a   \2577 \a 6 \2502    url("./media/fonts/static/Montserrat-Medium.ttf") format("ttf")\d\a   \2502       ^\a   \2575 \a   App.sass 6:6  root stylesheet';
+  content: 'Error: expected selector.\a   \2577 \a 6 \2502    url("./media/fonts/static/Montserrat-Medium.ttf") format("ttf")\d\a   \2502       ^\a   \2575 \a   Global.sass 6:6  @import\a   App.sass 1:9     root stylesheet';
 }

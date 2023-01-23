@@ -28,30 +28,32 @@
       form
         display: flex
         flex-direction: column
-        align-items: center
-        .form-submit:hover
-          background-color: #6793BB
-          transition: 0.3s
         .form-submit
+          width: 100%
           display: flex
-          justify-content: center
-          padding: 24px 64px 23px
-          width: 390px
-          height: 69px
-          background-color: #455773
-          border: none
-          font-weight: 600
-          font-size: 18px
-          color: #FFFFFF
-        p
-          font-family: 'Montserrat',sans-serif
-          font-style: normal
-          font-weight: 400
-          font-size: 16px
-          line-height: 18px
-          color: #455773
-          padding: 16px 0 100px 0
-          width: 390px
+          flex-direction: column
+          align-items: center
+          input:hover
+            background-color: #6793BB
+            transition: 0.3s
+          input
+            padding: 24px 64px 23px
+            width: 390px
+            height: 69px
+            background-color: #455773
+            border: none
+            font-weight: 600
+            font-size: 18px
+            color: #FFFFFF
+          p
+            font-family: 'Montserrat',sans-serif
+            font-style: normal
+            font-weight: 400
+            font-size: 16px
+            line-height: 18px
+            color: #455773
+            padding: 16px 0 100px 0
+            width: 390px
         .form-items
           display: grid
           grid-template-columns: repeat(2, 390px)
@@ -130,12 +132,41 @@
       width: 800px
       margin-left: -462px
 
-@media only screen and (max-width : 1440px)
+@media only screen and (max-width : 1250px)
   .form-cooperation
     height: 85vh
     .form
-      margin-left: -451px
+      margin-left: -450px
 
+@media only screen and (max-width : 1024px)
+  .form-cooperation
+    height: 85vh
+    .form
+      margin-left: -450px
+
+@media only screen and (max-width : 950px)
+  .form-cooperation
+    height: 100vh
+    .form
+      width: 650px
+      margin-left: -378px
+      .form-container
+        width: 700px
+        form .form-items
+          grid-template-columns: repeat(2, 350px)
+        form .form-items__item .form-input
+          width: 300px
+        form .form-items__item .field__file-fake
+          width: 295px
+        form .form-items__item .field__file-button
+           right: 44px
+
+@media only screen and (max-width: 768px)
+  .form-cooperation .form
+    width: 640px
+    margin-left: -376px
+    .form-container
+      width: 500px
 
 
 

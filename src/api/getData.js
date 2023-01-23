@@ -1,13 +1,15 @@
 import axios from 'axios';
-const url = 'http://zinchi5d.beget.tech/api/news.list';
+const urlNews = 'http://zinchi5d.beget.tech/api/news.list';
 
 export default class GetData {
-    static async getAll() {
+    static async getNews() {
         try{
-            let getData = await axios.get(url);
-            return getData.data;
+            let getData = await axios.get(urlNews);
+            return getData.data.data;
         } catch (e) {
             console.log(e)
         }
     }
 }
+
+
