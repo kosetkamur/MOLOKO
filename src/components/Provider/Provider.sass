@@ -88,8 +88,8 @@
 
 @media only screen and (max-width : 1024px)
   .provider::after
-    background-size: 500px auto
     width: 500px
+    height: 100vh
   .provider .container
     width: 800px
     .wrapper
@@ -101,27 +101,11 @@
         height: 70px
         font-size: 30px
 
-@media only screen and (max-width : 900px)
+@media only screen and (max-width : 950px)
   .provider::after
     width: 400px
 
 @media only screen and (max-width : 850px)
-  .provider::after
-    width: 350px
-
-@media only screen and (max-width : 800px)
-  .provider .container
-    .wrapper
-      .line
-        width: 230px
-        left: -84px
-        top: 280px
-      .requirements__item_circle
-        width: 60px
-        height: 60px
-        font-size: 26px
-
-@media only screen and (max-width : 768px)
   .provider::after
     width: 0
     height: 0
@@ -137,4 +121,94 @@
       .wrapper
         width: 70%
         margin: 20px auto 0 auto
+        .line
+          left: 17px
+@media only screen and (max-width : 800px)
+  .provider .container
+    .wrapper
+      .line
+        width: 230px
+        left: 23px
+        top: 280px
+      .requirements__item_circle
+        width: 60px
+        height: 60px
+        font-size: 26px
+
+@media only screen and (max-width : 770px)
+  .provider .container
+    .wrapper
+      .line
+        left: 8px
+
+@media only screen and (max-width : 768px)
+  .provider
+    .container
+      background: rgba(103, 147, 187, 0.9)
+      backdrop-filter: blur(10px)
+      .wrapper
+        width: 70%
+        margin: 20px auto 0 auto
+
+@media only screen and (max-width : 650px)
+  .provider .container
+    .wrapper
+      .line
+        left: -13px
+      .requirements__item_circle
+        width: 50px
+        height: 50px
+        font-size: 23px
+      .requirements__item_text
+        width: 250px
+
+@media only screen and (max-width : 550px)
+  .provider .container
+    .wrapper
+      .line
+        left: -20px
+      .requirements__item_circle
+        width: 50px
+        height: 50px
+        font-size: 23px
+      .requirements__item_text
+        width: 200px
+
+@media only screen and (max-width : 500px)
+  .provider .container
+    .wrapper
+      .line
+        left: -29px
+      .requirements__item_circle
+        width: 48px
+        height: 48px
+      .requirements__item_text
+        width: 180px
+
+@media only screen and (max-width : 450px)
+  .provider .container
+    .wrapper
+      width: 90%
+      .line
+        width: 206px
+        left: -24px
+      .requirements__item_circle
+        width: 48px
+        height: 48px
+@media only screen and (max-width : 380px)
+  .provider .container
+    .wrapper
+      .line
+        left: -61px
+
+
+@media only screen and (max-width : 320px)
+  .provider .container
+    .wrapper
+      .line
+        left: -61px
+      .title
+        h2
+          font-size: 20px
+
 

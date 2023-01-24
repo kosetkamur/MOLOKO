@@ -32,8 +32,8 @@ function App() {
         <About />
         <Catalog />
         <Collaboration />
-        {/*<Provider />*/}
-        {/*<Form />*/}
+        <Provider />
+        <Form />
         <Partners />
         <News news={ news }/>
         <Maps />

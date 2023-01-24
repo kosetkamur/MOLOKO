@@ -32,7 +32,7 @@ const News = ({ news }) => {
     const settings = {
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 1500,
         arrows: false,
         pauseOnDotsHover: true,
@@ -68,7 +68,29 @@ const News = ({ news }) => {
                 slidesToScroll: 1,
                 infinite: true,
                 dots: false,
-                autoplay: true,
+                autoplay: false,
+                autoplaySpeed: 1500,
+            }
+            },
+            {
+                breakpoint: 600,
+                    settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false,
+                autoplay: false,
+                autoplaySpeed: 1500,
+            }
+            },
+            {
+                breakpoint: 310,
+                    settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false,
+                autoplay: false,
                 autoplaySpeed: 1500,
             }
             },
@@ -95,7 +117,6 @@ const News = ({ news }) => {
                     }
                 </Slider>
             </div>
-
         </div>
     );
 };
