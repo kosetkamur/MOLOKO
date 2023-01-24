@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import './Logistic.sass';
 
 import icon1 from '../../media/img/icon1.svg';
 import icon2 from '../../media/img/icon2.svg';
 import icon3 from '../../media/img/icon3.svg';
-import FormPopup from "../FormPopup";
 
 const Logistic = ({ handleClick }) => {
 

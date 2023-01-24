@@ -1,3 +1,5 @@
+.new-popup .closePopup
+  animation: fadeOut .6s forwards
 .new-popup
   background-color: rgba(0, 0, 0, 0.5)
   height: 100%
@@ -9,17 +11,18 @@
   align-items: center
   justify-content: center
   z-index: 999
-  animation: fade .6s
+  animation: fade .6s forwards
   overflow: auto
+  opacity: 0
   .new
     background-color: rgba(255, 255, 255, 1)
-    width: 1110px
+    width: 90%
     display: flex
     align-items: center
     justify-content: center
     padding: 5% 0
     .new-container
-      width: 800px
+      width: 85%
       margin: 0 auto
       .title
         display: flex
@@ -45,7 +48,15 @@
         font-size: 18px
 
 
+@keyframes fade
+  100%
+    opacity: 1
+    transition: 0.3s
 
+@keyframes fadeOut
+  100%
+    opacity: 0
+    transition: 0.3s
 
 
 @media only screen and (max-width : 1440px)
@@ -53,6 +64,10 @@
     height: 87vh
     width: 1000px
 
+
+@media only screen and (max-width : 600px)
+  .new-popup .new .new-container p.body
+    font-size: 12px
 
 @media only screen and (max-width : 1024px)
   .form-popup .form

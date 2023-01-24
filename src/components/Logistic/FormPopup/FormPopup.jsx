@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './FormPopup.sass'
-import close from '../../media/img/close.svg'
+import close from '../../../media/img/close.svg'
 
 const FormPopup = ({ handleClose }) => {
 
