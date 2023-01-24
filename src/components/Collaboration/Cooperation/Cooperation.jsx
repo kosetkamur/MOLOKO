@@ -21,11 +21,11 @@ const Cooperation = () => {
     },[]);
 
     return (
-        <div className="cooperation">
+        <>
             {
                 (typeof content == 'object') ? content.map((item, index) => <CollaborationItem data={ item } key={ index } index={ index+1 } />) : ""
             }
-        </div>
+        </>
     );
 };
 

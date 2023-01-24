@@ -34,10 +34,10 @@ function App() {
         <Collaboration />
         {/*<Provider />*/}
         {/*<Form />*/}
-        {/*<Partners />*/}
-        {/*/!*<News news={ news }/>*!/*/}
+        <Partners />
+        <News news={ news }/>
         <Maps />
-        {/*<Contacts />*/}
+        <Contacts />
     </div>
   );
 }

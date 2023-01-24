@@ -37,7 +37,7 @@ const Collaboration = () => {
                     <div className="drop-down_item" onClick={ openList }>
                         <div className="drop-down_item__title">
                             <h4>Условия сотрудничества</h4>
-                            <img src={arrow} alt="стрелочка" />
+                            <img src={arrow} alt="стрелочка"/>
                         </div>
 
                         <div className="drop-down_item__list open">
@@ -47,7 +47,7 @@ const Collaboration = () => {
                     <div className="drop-down_item drop-down_next" onClick={ openList2 }>
                         <div className="drop-down_item__title">
                             <h4>Условия оплаты</h4>
-                            <img src={arrow} alt="стрелочка" />
+                            <img src={arrow} alt="стрелочка"/>
                         </div>
 
                         <div className="drop-down_item__list">
@@ -57,7 +57,7 @@ const Collaboration = () => {
                     <div className="drop-down_item drop-down_next" onClick={ openList3 }>
                         <div className="drop-down_item__title">
                             <h4>Доставка</h4>
-                            <img src={arrow} alt="стрелочка" />
+                            <img src={arrow} alt="стрелочка"/>
                         </div>
 
                         <div className="drop-down_item__list">
