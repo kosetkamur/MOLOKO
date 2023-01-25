@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import PhoneInput from 'react-input-mask';
 
 import './FormPopup.sass'
 import close from '../../../media/img/close.svg'
@@ -105,13 +106,20 @@ const FormPopup = ({ handleClose }) => {
                             </div>
                             <div className="form-items__item item3">
                                 <label htmlFor='contact_phone'>Ваш телефон*</label>
-                                <input type='tel'
-                                       id="phone"
-                                       name='contact_phone'
-                                       placeholder='+7 (   ) __-__-__ '
-                                       className="form-input"
-                                       value={ data.contact_phone || "" }
-                                       onChange={ handleInputChange }/>
+                                {/*<input type='tel'*/}
+                                {/*       name='contact_phone'*/}
+                                {/*       placeholder='+7 (   ) __-__-__ '*/}
+                                {/*       className="form-input"*/}
+                                {/*       value={ data.contact_phone || "" }*/}
+                                {/*       onChange={ handleInputChange }/>*/}
+
+                                <PhoneInput
+                                    name='contact_phone'
+                                    placeholder='+7 (   ) __-__-__ '
+                                    className="form-input"
+                                    value={ data.contact_phone || "" }
+                                    onChange={handleInputChange}>
+                                </PhoneInput>
                             </div>
                             <div className="form-items__item item4">
                                 <label htmlFor='email'>Ваша почта*</label>

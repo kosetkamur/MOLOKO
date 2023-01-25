@@ -4,6 +4,21 @@ import './Navigation.sass'
 import logo from "../../../media/img/logo.svg";
 
 const Navigation = () => {
+    const anchors = document.querySelectorAll('a[href*="#"]')
+
+    for (let anchor of anchors) {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault()
+
+            const blockID = anchor.getAttribute('href').substr(1)
+
+            document.getElementById(blockID).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+        })
+    }
+
     return (
         <nav>
             <div className="nav__logo">

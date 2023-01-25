@@ -16,7 +16,6 @@ const Partners = () => {
         });
     }, []);
 
-    console.log(partners)
     return (
         <div className="partners">
             <div className="container">

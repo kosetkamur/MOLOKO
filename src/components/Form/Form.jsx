@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import './Form.sass'
 import clip from '../../media/img/clip.svg'
+import Submit from "./Submit/Submit";
 
 const Form = () => {
     const [ file, setFile ] = useState('Файл не выбран');
@@ -145,10 +146,7 @@ const Form = () => {
                                        onChange={ handleInputChange }/>
                             </div>
                         </div>
-                        <div className="form-submit">
-                            <input type='submit' name='submit' value='Отправить заявку'/>
-                            <p className='agree'>Нажимая кнопку отправки, вы даете согласие на обработку своих персональных данных</p>
-                        </div>
+                        <Submit />
                     </form>
                 </div>
             </div>

@@ -12,7 +12,6 @@ const About = () => {
     useEffect(() => {
         GetAbout.GetContent().then(resp => {
             setData(resp);
-            console.log(resp)
         });
     }, []);
 

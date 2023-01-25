@@ -15,7 +15,7 @@ const Header = () => {
             </nav>
             <div className="container">
                 <section className="header-components">
-                    <div>
+                    <div className="header-components__description">
                         <h1>
                             Официальный дистрибьютер
                             крупнейших российских производителей

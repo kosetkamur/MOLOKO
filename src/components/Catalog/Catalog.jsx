@@ -14,7 +14,6 @@ const Catalog = () => {
     useEffect(() => {
         GetCatalog.GetItems().then(resp => {
             setCatalog(resp);
-            console.log(resp)
         });
     }, []);
 

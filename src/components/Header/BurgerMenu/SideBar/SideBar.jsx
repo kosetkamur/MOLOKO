@@ -16,7 +16,7 @@ const SideBar = ({ closeSideBar }) => {
                     <img src={ close } alt="Кнопка закрыть" />
                 </div>
                 <div className="nav__item">
-                    <a href="" className="collaborationRef">Сотрудничество</a>
+                    <a href="#collaboration" className="collaborationRef">Сотрудничество</a>
                 </div>
                 <div className="nav__item">
                     <a href="#catalog" className="catalogRef">Каталог</a>

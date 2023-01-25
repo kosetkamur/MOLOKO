@@ -1,8 +1,19 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import './Provider.sass'
 
+import Requirements from "./Requirements/Requirements";
+import GetRequirements from "../../api/getRequirements";
+
 const Provider = () => {
+    const [ requirement, setRequirement ] = useState([]);
+
+    useEffect(() => {
+        GetRequirements.GetRequirement().then(resp => {
+            setRequirement(resp);
+        });
+    }, []);
+
     return (
         <div className="provider">
             <div className="container">
@@ -18,30 +29,9 @@ const Provider = () => {
                         </h2>
                     </div>
                     <div className="requirements">
-                        <div className="requirements__item">
-                            <div className="requirements__item_circle">
-                                1
-                            </div>
-                            <p className="requirements__item_text">
-                                Качество и безопасность<br /> предлагаемой продукции
-                            </p>
-                        </div>
-                        <div className="requirements__item">
-                            <div className="requirements__item_circle">
-                                2
-                            </div>
-                            <p className="requirements__item_text">
-                                Качество и безопасность<br /> предлагаемой продукции
-                            </p>
-                        </div>
-                        <div className="requirements__item">
-                            <div className="requirements__item_circle">
-                                3
-                            </div>
-                            <p className="requirements__item_text">
-                                Качество и безопасность<br /> предлагаемой продукции
-                            </p>
-                        </div>
+                        {
+                            requirement.map((item, index) => <Requirements requirement={ item } index={ index+1 } key={ index }/>)
+                        }
                     </div>
                 </div>
             </div>

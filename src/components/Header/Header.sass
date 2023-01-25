@@ -27,15 +27,16 @@ header
     flex-direction: column
     justify-content: center
     height: calc(100vh - 100px)
-    h1
-      font-family: 'Montserrat', sans-serif
-      font-style: normal
-      font-weight: 600
-      font-size: 36px
-      color: #FFFFFF
-    p
-      margin-bottom: 8%
-      width: 360px
+    &__description
+      h1
+        font-family: 'Montserrat', sans-serif
+        font-style: normal
+        font-weight: 600
+        font-size: 36px
+        color: #FFFFFF
+      p
+        margin-bottom: 8%
+        width: 360px
     a
       text-decoration: none
       display: block
@@ -70,8 +71,9 @@ header
 
     .header-components
       width: 80%
-      h1
-        font-size: 30px
+      &__description
+        h1
+          font-size: 30px
       a
         width: 320px
 
@@ -81,12 +83,13 @@ header
     height: 0
     width: 0
   header
-    height: 70vh
+    //height: 70vh
     .container
       .header-components
-        height: calc(70vh - 20vh)
-        h1
-          font-size: 20px
+        //height: calc(70vh - 20vh)
+        &__description
+          h1
+            font-size: 20px
         a
           width: 300px
           height: 60px
@@ -105,7 +108,7 @@ header
         justify-content: space-between
         height: calc(100vh - 30vh)
         width: 80%
-        div
+        &__description
           margin-top: 35%
           h1
             font-size: 19px

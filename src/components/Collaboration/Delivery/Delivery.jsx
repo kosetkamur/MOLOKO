@@ -18,7 +18,6 @@ const Delivery = () => {
         }
         fetch();
     },[]);
-    console.log(content)
     return (
         <>
             {
