@@ -1,13 +1,69 @@
-import React from 'react';
+import React, {useState} from 'react';
+import axios from 'axios';
 
 import './FormPopup.sass'
 import close from '../../../media/img/close.svg'
 
 const FormPopup = ({ handleClose }) => {
 
+    const initialState = {
+        name: "",
+        contact_phone: "",
+        email: "",
+        company_name: ""
+    }
+
+    const [ data, setData ] = useState({initialState})
+
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        var formdata = new FormData();
+        formdata.append('name', data.name);
+        formdata.append('contact_phone', data.contact_phone);
+        formdata.append('email', data.email);
+        formdata.append('company_name', data.company_name);
+
+
+
+        axios({
+            method: "post",
+            url: "http://zinchi5d.beget.tech/api/bids.price_list.create",
+            data: formdata,
+            headers: { "Content-Type": "text/html; charset=utf-8" },
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (response) {
+                console.log(response);
+            });
+
+        setData({
+            name: "",
+            contact_phone: "",
+            email: "",
+            company_name: "",
+        })
+    }
+
+    const handleInputChange = (event) => {
+        const {name, value} = event.target
+        setData({...data, [name]: value})
+    }
+
     const handlePopupClose = () => {
         handleClose()
     }
+
+
+
+
+    const [value, setValue] = useState()
+
+
+
+
 
     return (
         <div className='form-popup'>
@@ -27,23 +83,44 @@ const FormPopup = ({ handleClose }) => {
                         </button>
                     </div>
 
-                    <form>
+                    <form onSubmit={ handleSubmit }>
                         <div className="form-items">
                             <div className="form-items__item item1">
                                 <label htmlFor='name'>Ваше имя*</label>
-                                <input type='text' name='name' placeholder='Имя' className="form-input"/>
+                                <input type='text'
+                                       name='name'
+                                       placeholder='Имя'
+                                       className="form-input"
+                                       value={ data.name || "" }
+                                       onChange={ handleInputChange }/>
                             </div>
                             <div className="form-items__item item2">
-                                <label htmlFor='company'>Наименование компании*</label>
-                                <input type='text' name='company' placeholder='Компания' className="form-input" />
+                                <label htmlFor='company_name'>Наименование компании*</label>
+                                <input type='text'
+                                       name='company_name'
+                                       placeholder='Компания'
+                                       className="form-input"
+                                       value={ data.company_name || "" }
+                                       onChange={ handleInputChange }/>
                             </div>
                             <div className="form-items__item item3">
-                                <label htmlFor='phone'>Ваш телефон*</label>
-                                <input type='tel' name='phone' placeholder='+7 (   ) __-__-__ ' className="form-input" />
+                                <label htmlFor='contact_phone'>Ваш телефон*</label>
+                                <input type='tel'
+                                       id="phone"
+                                       name='contact_phone'
+                                       placeholder='+7 (   ) __-__-__ '
+                                       className="form-input"
+                                       value={ data.contact_phone || "" }
+                                       onChange={ handleInputChange }/>
                             </div>
                             <div className="form-items__item item4">
                                 <label htmlFor='email'>Ваша почта*</label>
-                                <input type='email' name='email' placeholder='Email' className="form-input" />
+                                <input type='email'
+                                       name='email'
+                                       placeholder='Email'
+                                       className="form-input"
+                                       value={ data.email || "" }
+                                       onChange={ handleInputChange }/>
                             </div>
                         </div>
                         <input type='submit' name='submit' value='Запросить прайс-лист' className="form-submit" />

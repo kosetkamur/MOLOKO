@@ -37,6 +37,9 @@
             background-color: #6793BB
             transition: 0.3s
           input
+            -webkit-appearance: none
+            -moz-appearance: none
+            appearance: none
             padding: 24px 64px 23px
             width: 390px
             height: 69px
@@ -46,9 +49,6 @@
             font-size: 18px
             color: #FFFFFF
           p
-            font-family: 'Montserrat',sans-serif
-            font-style: normal
-            font-weight: 400
             font-size: 16px
             line-height: 18px
             color: #455773
@@ -120,9 +120,9 @@
               position: absolute
               right: 25px
               top: 5px
-              width: 24px
-              height: 24px
               cursor: pointer
+              img
+                width: 100%
 
 
 @media only screen and (max-width : 1440px)
@@ -299,6 +299,10 @@
     .form
       width: 352px
       margin-left: -176px
+      .form-container form .form-items__item .field__file-button
+        right: 0
+        img
+          width: 80%
 
 @media only screen and (max-width: 390px)
   .form-cooperation

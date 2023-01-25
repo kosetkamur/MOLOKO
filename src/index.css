@@ -8,6 +8,7 @@ html, body{
     -webkit-text-size-adjust : 100%;
     text-size-adjust: 100%;
     scroll-behavior: smooth;
+    overflow-x:hidden;
 }
 .no-scroll{
     background-color: rgba(0, 0, 0, 0.5);

@@ -22,13 +22,44 @@
         flex-direction: row
         justify-content: space-between
         cursor: pointer
+        h4:hover
+          font-size: 25px
+          transition: 0.3s
         h4
           padding-left: 8px
-        img
+        .image1.imgRotate
+          transform: rotate(180deg)
+          padding-left: 8px
+          padding-right: 0
+          transition: 0.3s
+        .image1
           width: 32px
           height: 32px
           margin: 0
           padding-right: 8px
+          transition: 0.3s
+        .image2.imgRotate
+          transform: rotate(180deg)
+          padding-left: 8px
+          padding-right: 0
+          transition: 0.3s
+        .image2
+          width: 32px
+          height: 32px
+          margin: 0
+          padding-right: 8px
+          transition: 0.3s
+        .image3.imgRotate
+          transform: rotate(180deg)
+          padding-left: 8px
+          padding-right: 0
+          transition: 0.3s
+        .image3
+          width: 32px
+          height: 32px
+          margin: 0
+          padding-right: 8px
+          transition: 0.3s
       &__list
         margin: 18px 0
         transition: 0.3s
@@ -61,9 +92,16 @@
 
 
 @media only screen and (max-width : 1024px)
-  .collaboration .drop-down_item__title img
-    width: 20px
-    height: 20px
+  .collaboration .drop-down_item__title
+    .image1
+      width: 20px
+      height: 20px
+    .image2
+      width: 20px
+      height: 20px
+    .image3
+      width: 20px
+      height: 20px
   .collaboration .drop-down_item__list .list_item__circle
     width: 45px
     height: 45px
@@ -88,9 +126,17 @@
     padding-left: 20px
 
 @media only screen and (max-width : 610px)
-  .collaboration .drop-down_item__title img
+  .collaboration .drop-down_item__title
+    .image1
       width: 18px
       height: 18px
+    .image2
+      width: 18px
+      height: 18px
+    .image3
+      width: 18px
+      height: 18px
+
   .collaboration .drop-down_item__list .list_item__circle
     width: 40px
     height: 40px
@@ -129,6 +175,10 @@
 @media only screen and (max-width : 400px)
   .collaboration .drop-down_item__list .list_item p
     width: 180px
+
+@media only screen and (max-width: 375px)
+  .collaboration .container
+    width: 300px !important
 
 
 @media only screen and (max-width : 330px)

@@ -21,29 +21,43 @@ const Form = () => {
     const handleSubmit = event => {
         event.preventDefault();
 
-        const cooperation = {
-            full_name: data.full_name,
-            contact_phone: data.contact_phone,
-            email: data.email,
-            company_name: data.company_name,
-            comment: data.comment,
-            document: fileInput.current.files[0]
-        };
-        console.log(cooperation)
-        let a = JSON.stringify(cooperation)
+        var formdata = new FormData();
+        formdata.append('full_name', data.full_name);
+        formdata.append('contact_phone', data.contact_phone);
+        formdata.append('email', data.email);
+        formdata.append('company_name', data.company_name);
+        formdata.append('comment', data.comment);
+        formdata.append('document', fileInput.current.files[0]);
 
-        axios.post(`http://zinchi5d.beget.tech/api/bids.cooperation.create`, a)
-            .then(res => {
-                console.log(res);
-                console.log(res.data);
+        axios({
+            method: "post",
+            url: "http://zinchi5d.beget.tech/api/bids.cooperation.create",
+            data: formdata,
+            headers: { "Content-Type": "multipart/form-data" },
+        })
+            .then(function (response) {
+                //handle success
+                console.log(response);
             })
-            .catch(e => console.log(e))
+            .catch(function (response) {
+                //handle error
+                console.log(response);
+            });
+
+        setData({
+            full_name: "",
+            contact_phone: "",
+            email: "",
+            company_name: "",
+            comment: "",
+        })
+        setFile('Файл не выбран');
     }
     const handleInputChange = (event) => {
         const {name, value} = event.target
         setData({...data, [name]: value})
     }
-    console.log(data)
+
 
     let fields = document.querySelectorAll('.field__file');
     Array.prototype.forEach.call(fields, function (input) {
@@ -55,7 +69,6 @@ const Form = () => {
                 setFile(`Выбрано файлов: ${countFiles}`)
         });
     });
-
 
 
     return (
