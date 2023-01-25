@@ -14,31 +14,36 @@ const Collaboration = () => {
 
     const openList = () => {
         setList(!list)
+    }
+    const openList2 = () => {
+        setList2(!list2)
+    }
+    const openList3 = () => {
+        setList3(!list3)
+    }
+    useEffect(() => {
         let arrow = document.querySelector('.image1')
         if(list === true){
             arrow.classList.add('imgRotate')
         } else {
             arrow.classList.remove('imgRotate')
         }
-    }
-    const openList2 = () => {
-        setList2(!list2)
-        let arrow = document.querySelector('.image2')
-        if(list === true){
-            arrow.classList.add('imgRotate')
+
+        let arrow2 = document.querySelector('.image2')
+        if(list2 === true){
+            arrow2.classList.add('imgRotate')
         } else {
-            arrow.classList.remove('imgRotate')
+            arrow2.classList.remove('imgRotate')
         }
-    }
-    const openList3 = () => {
-        setList3(!list3)
-        let arrow = document.querySelector('.image3')
-        if(list === true){
-            arrow.classList.add('imgRotate')
+
+        let arrow3 = document.querySelector('.image3')
+        if(list3 === true){
+            arrow3.classList.add('imgRotate')
         } else {
-            arrow.classList.remove('imgRotate')
+            arrow3.classList.remove('imgRotate')
         }
-    }
+    }, [list, list2, list3])
+
 
     return (
         <section className="collaboration" id="collaboration">
