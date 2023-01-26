@@ -1,5 +1,5 @@
 .about-company
-  height: 100vh
+  height: 100%
   background: #6793BB
   padding: 8% 0
   box-sizing: content-box
@@ -59,16 +59,6 @@
 
 
 
-@media only screen and (max-width : 2560px)
-  .about-company
-    height: 80vh
-    padding-top: 6%
-
-@media only screen and (max-width : 1920px)
-  .about-company
-    height: 100%
-    padding: 5% 0 5% 0
-
 @media only screen and (max-width : 1250px)
   .about-company .container .about-company-wrapper .content-about-company .facts
     padding-left: 1%
@@ -77,17 +67,15 @@
 
 @media only screen and (max-width : 1024px)
   .about-company
-    height: 100%
-    padding: 15% 0
     .container
       width: 800px
-
-  .about-company .container .about-company-wrapper .content-about-company .facts__item_num
-    font-size: 54px
-    margin: 0
-  .about-company .container .about-company-wrapper .content-about-company .facts__item_text
-    font-size: 16px
-    margin: 0
+      .about-company-wrapper
+        .content-about-company .facts__item_num
+          font-size: 54px
+          margin: 0
+        .content-about-company .facts__item_text
+          font-size: 16px
+          margin: 0
 
 
 
@@ -124,25 +112,27 @@
   .content-about-company
     flex-wrap: wrap
 
-  .about-company .container .about-company-wrapper .content-about-company .facts__item_num
-    font-size: 40px
-
-  .about-company .container .about-company-wrapper .content-about-company .subscribe .map
-    width: 60%
-
-  .about-company .container .about-company-wrapper .content-about-company .subscribe .subtitle
-    width: 100%
+  .about-company .container .about-company-wrapper .content-about-company
+    .facts__item_num
+      font-size: 40px
+    .subscribe .map
+      width: 60%
+    .subscribe .subtitle
+      width: 100%
 
 @media only screen and (max-width : 600px)
-  .about-company .container .about-company-wrapper .content-about-company .facts
-    grid-template-columns: repeat(2,180px)
-  .about-company .container .about-company-wrapper .content-about-company .facts__item_text
-    font-size: 12px
-    width: 150px
+  .about-company .container .about-company-wrapper .content-about-company
+    .facts__item_text
+      font-size: 12px
+      width: 150px
 
 @media only screen and (max-width : 600px)
   .about-company .container .about-company-wrapper .content-about-company .facts
     grid-template-columns: repeat(2, 155px)
+
+@media only screen and (max-width : 450px)
+  .about-company .container .about-company-wrapper .title
+    padding-bottom: 30px
 
 @media only screen and (max-width : 300px)
   .about-company .container .about-company-wrapper .content-about-company .facts

@@ -10,10 +10,11 @@ import Form from "./components/Form";
 import Partners from "./components/Partners";
 import News from "./components/News";
 import Contacts from "./components/Contacts";
-
-import GetData from "./api/getData";
 import Maps from "./components/Map/Maps";
 import Catalog from "./components/Catalog/Catalog";
+
+import GetData from "./api/getData";
+
 
 function App() {
   const [ news, setNews ] = useState('');

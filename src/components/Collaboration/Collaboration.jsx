@@ -12,15 +12,7 @@ const Collaboration = () => {
     const [ list2, setList2 ] = useState(false);
     const [ list3, setList3 ] = useState(false);
 
-    const openList = () => {
-        setList(!list)
-    }
-    const openList2 = () => {
-        setList2(!list2)
-    }
-    const openList3 = () => {
-        setList3(!list3)
-    }
+
     useEffect(() => {
         let arrow = document.querySelector('.image1')
         if(list === true){
@@ -57,7 +49,7 @@ const Collaboration = () => {
                     </h2>
                 </div>
                 <div className="drop-down">
-                    <div className="drop-down_item" onClick={ openList }>
+                    <div className="drop-down_item" onClick={ ()=> setList(e => !e) }>
                         <div className="drop-down_item__title">
                             <h4>Условия сотрудничества</h4>
                             <img src={arrow} alt="стрелочка" className="image1"/>
@@ -67,7 +59,7 @@ const Collaboration = () => {
                             { list && <Cooperation />}
                         </div>
                     </div>
-                    <div className="drop-down_item drop-down_next" onClick={ openList2 }>
+                    <div className="drop-down_item drop-down_next" onClick={ ()=> setList2(e => !e) }>
                         <div className="drop-down_item__title">
                             <h4>Условия оплаты</h4>
                             <img src={arrow} alt="стрелочка" className="image2"/>
@@ -77,7 +69,7 @@ const Collaboration = () => {
                             { list2 && <Payment />}
                         </div>
                     </div>
-                    <div className="drop-down_item drop-down_next" onClick={ openList3 }>
+                    <div className="drop-down_item drop-down_next" onClick={ ()=> setList3(e => !e) }>
                         <div className="drop-down_item__title">
                             <h4>Доставка</h4>
                             <img src={arrow} alt="стрелочка" className="image3"/>

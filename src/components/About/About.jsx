@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
 import './About.sass'
-import map from '../../media/img/map.svg'
 import GetAbout from "../../api/getAbout";
 import Fact from "./Fact/Fact";
 
@@ -34,7 +33,7 @@ const About = () => {
                             <p className="subtitle">
                                 { data.description }
                             </p>
-                            <img src={map} alt="Карта покупателей и поставщиков" className="mapImage"/>
+                            <img src={ 'http://zinchi5d.beget.tech'+data.map_image } alt="Карта покупателей и поставщиков" className="mapImage"/>
                         </div>
                         <div className="facts">
                             {

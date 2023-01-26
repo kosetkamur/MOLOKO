@@ -1,9 +1,13 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import PhoneInput from 'react-input-mask';
+
 
 import './FormPopup.sass'
 import close from '../../../media/img/close.svg'
+import Agreement from "../../Form/Submit/Agreement/Agreement";
+import PhoneMask from "../PhoneMask/Phone";
+
+
 
 const FormPopup = ({ handleClose }) => {
 
@@ -19,18 +23,18 @@ const FormPopup = ({ handleClose }) => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        var formdata = new FormData();
-        formdata.append('name', data.name);
-        formdata.append('contact_phone', data.contact_phone);
-        formdata.append('email', data.email);
-        formdata.append('company_name', data.company_name);
+        let formData = new FormData();
+        formData.append('name', data.name);
+        formData.append('contact_phone', data.contact_phone);
+        formData.append('email', data.email);
+        formData.append('company_name', data.company_name);
 
 
 
         axios({
             method: "post",
             url: "http://zinchi5d.beget.tech/api/bids.price_list.create",
-            data: formdata,
+            data: formData,
             headers: { "Content-Type": "text/html; charset=utf-8" },
         })
             .then(function (response) {
@@ -41,10 +45,11 @@ const FormPopup = ({ handleClose }) => {
             });
 
         setData({
+            ...data,
             name: "",
             contact_phone: "",
             email: "",
-            company_name: "",
+            company_name: ""
         })
     }
 
@@ -56,13 +61,6 @@ const FormPopup = ({ handleClose }) => {
     const handlePopupClose = () => {
         handleClose()
     }
-
-
-
-
-    const [value, setValue] = useState()
-
-
 
 
 
@@ -93,7 +91,8 @@ const FormPopup = ({ handleClose }) => {
                                        placeholder='Имя'
                                        className="form-input"
                                        value={ data.name || "" }
-                                       onChange={ handleInputChange }/>
+                                       onChange={ handleInputChange }
+                                       required/>
                             </div>
                             <div className="form-items__item item2">
                                 <label htmlFor='company_name'>Наименование компании*</label>
@@ -102,25 +101,23 @@ const FormPopup = ({ handleClose }) => {
                                        placeholder='Компания'
                                        className="form-input"
                                        value={ data.company_name || "" }
-                                       onChange={ handleInputChange }/>
+                                       onChange={ handleInputChange }
+                                       required/>
                             </div>
-                            <div className="form-items__item item3">
-                                <label htmlFor='contact_phone'>Ваш телефон*</label>
-                                {/*<input type='tel'*/}
-                                {/*       name='contact_phone'*/}
-                                {/*       placeholder='+7 (   ) __-__-__ '*/}
-                                {/*       className="form-input"*/}
-                                {/*       value={ data.contact_phone || "" }*/}
-                                {/*       onChange={ handleInputChange }/>*/}
+                            {/*<div className="form-items__item item3">*/}
+                            {/*    <label htmlFor='contact_phone'>Ваш телефон*</label>*/}
+                            {/*    /!*<input type='tel'*!/*/}
+                            {/*    /!*       name='contact_phone'*!/*/}
+                            {/*    /!*       placeholder='+7 (   ) __-__-__ '*!/*/}
+                            {/*    /!*       className="form-input"*!/*/}
+                            {/*    /!*       value={ data.contact_phone || "" }*!/*/}
+                            {/*    /!*       onChange={ handleInputChange }/>*!/*/}
 
-                                <PhoneInput
-                                    name='contact_phone'
-                                    placeholder='+7 (   ) __-__-__ '
-                                    className="form-input"
-                                    value={ data.contact_phone || "" }
-                                    onChange={handleInputChange}>
-                                </PhoneInput>
-                            </div>
+                            {/*    <PhoneMask name='contact_phone'*/}
+                            {/*        value={data.contact_phone }*/}
+                            {/*        onChange={ handleInputChange }>*/}
+                            {/*    </PhoneMask>*/}
+                            {/*</div>*/}
                             <div className="form-items__item item4">
                                 <label htmlFor='email'>Ваша почта*</label>
                                 <input type='email'
@@ -128,11 +125,12 @@ const FormPopup = ({ handleClose }) => {
                                        placeholder='Email'
                                        className="form-input"
                                        value={ data.email || "" }
-                                       onChange={ handleInputChange }/>
+                                       onChange={ handleInputChange }
+                                       required/>
                             </div>
                         </div>
                         <input type='submit' name='submit' value='Запросить прайс-лист' className="form-submit" />
-                        <p className='agree'>Нажимая кнопку отправки, вы даете согласие на обработку своих персональных данных</p>
+                        <Agreement />
                     </form>
                 </div>
             </div>

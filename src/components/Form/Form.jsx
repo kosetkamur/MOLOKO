@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import InputMask from 'react-input-mask';
 
 import './Form.sass'
 import clip from '../../media/img/clip.svg'
 import Submit from "./Submit/Submit";
 
 const Form = () => {
-    const [ file, setFile ] = useState('Файл не выбран');
     const fileInput = React.createRef();
 
     let initialState = {
@@ -16,8 +16,10 @@ const Form = () => {
         company_name: "",
         comment: "",
     }
-    const [ data, setData ] = useState(initialState);
 
+    const [ file, setFile ] = useState('Прикрепите файл в формате PDF');
+    const [ data, setData ] = useState(initialState);
+    const [ response, setResponse ] = useState(false);
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -36,13 +38,12 @@ const Form = () => {
             data: formdata,
             headers: { "Content-Type": "multipart/form-data" },
         })
-            .then(function (response) {
-                //handle success
-                console.log(response);
+            .then(function (res) {
+                setResponse(true)
+                console.log(res);
             })
-            .catch(function (response) {
-                //handle error
-                console.log(response);
+            .catch(function (res) {
+                console.log(res);
             });
 
         setData({
@@ -54,10 +55,13 @@ const Form = () => {
         })
         setFile('Файл не выбран');
     }
+
     const handleInputChange = (event) => {
         const {name, value} = event.target
         setData({...data, [name]: value})
     }
+
+
 
 
     let fields = document.querySelectorAll('.field__file');
@@ -94,7 +98,8 @@ const Form = () => {
                                        placeholder='Имя'
                                        className="form-input"
                                        value={ data.full_name || "" }
-                                       onChange={ handleInputChange } />
+                                       onChange={ handleInputChange }
+                                       required/>
                             </div>
                             <div className="form-items__item item2">
                                 <label htmlFor='contact_phone'>Ваш телефон*</label>
@@ -103,7 +108,8 @@ const Form = () => {
                                        placeholder='+7 (   ) __-__-__ '
                                        className="form-input"
                                        value={ data.contact_phone || "" }
-                                       onChange={ handleInputChange } />
+                                       onChange={ handleInputChange }
+                                       required/>
                             </div>
                             <div className="form-items__item item3">
                                 <label htmlFor='email'>Ваша почта*</label>
@@ -112,7 +118,8 @@ const Form = () => {
                                        placeholder='Email'
                                        className="form-input"
                                        value={ data.email || "" }
-                                       onChange={ handleInputChange } />
+                                       onChange={ handleInputChange }
+                                       required/>
                             </div>
                             <div className="form-items__item item4">
                                 <label htmlFor='company_name'>Наименование компании</label>
@@ -121,7 +128,8 @@ const Form = () => {
                                        placeholder='Компания'
                                        className="form-input"
                                        value={ data.company_name || "" }
-                                       onChange={ handleInputChange } />
+                                       onChange={ handleInputChange }
+                                       required/>
                             </div>
                             <div className="form-items__item item5">
                                 <label htmlFor='file'>Прикрепите файл</label>
@@ -129,6 +137,7 @@ const Form = () => {
                                        type="file"
                                        id="field__file-2"
                                        className="field field__file"
+                                       accept="application/pdf"
                                        ref={ fileInput } />
 
                                 <label className="field__file-wrapper" htmlFor="field__file-2">
@@ -143,15 +152,26 @@ const Form = () => {
                                        placeholder='Ваш комментарий'
                                        className="form-input"
                                        value={ data.comment || "" }
-                                       onChange={ handleInputChange }/>
+                                       onChange={ handleInputChange }
+                                       required/>
                             </div>
                         </div>
-                        <Submit />
+                        <Submit response={ response }/>
                     </form>
                 </div>
             </div>
         </div>
     );
 };
+
+function PhoneInput(props) {
+    return (
+        <InputMask
+            mask='(+7) 999 99 99'
+            value={props.value}
+            onChange={props.onChange}>
+        </InputMask>
+    );
+}
 
 export default Form;

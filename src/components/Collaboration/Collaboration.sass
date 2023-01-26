@@ -1,14 +1,14 @@
 .collaboration
   background-color: #455773
   height: 100%
-  padding: 10% 0
+  padding: 8% 0
   box-sizing: border-box
   .container
     width: 1200px
     height: auto
     margin: 0 auto
   .drop-down
-    margin-top: 64px
+    margin-top: 5%
     .drop-down_next
       margin-top: -18px
     &_item
@@ -107,6 +107,8 @@
     height: 45px
     min-width: 45px
     font-size: 17px
+  .collaboration .drop-down
+    margin-top: 30px
 
 @media only screen and (max-width : 768px)
   .collaboration .container
@@ -159,17 +161,20 @@
     padding-left: 10px
 
 @media only screen and (max-width : 450px)
-  .collaboration .container
-    width: 350px!important
-  .collaboration .drop-down_item__list .list_item p
-    width: 240px
-  .collaboration .drop-down_item__list .list_item
-    padding-left: 10px
-  .collaboration .drop-down_item__list .list_item__circle
-    width: 36px
-    height: 36px
-    min-width: 36px
-    font-size: 12px
+  .collaboration
+    padding: 10% 0
+    .container
+      width: 350px!important
+      .drop-down_item__list
+        .list_item
+          padding-left: 10px
+          p
+            width: 240px
+        .list_item__circle
+          width: 36px
+          height: 36px
+          min-width: 36px
+          font-size: 12px
 
 
 @media only screen and (max-width : 400px)

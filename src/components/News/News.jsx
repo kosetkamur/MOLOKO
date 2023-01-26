@@ -32,7 +32,7 @@ const News = ({ news }) => {
     const settings = {
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 1500,
         arrows: false,
         pauseOnDotsHover: true,
@@ -46,7 +46,7 @@ const News = ({ news }) => {
                 slidesToScroll: 1,
                 infinite: true,
                 dots: false,
-                autoplay: false,
+                autoplay: true,
                 autoplaySpeed: 1500,
             }
             },
@@ -57,7 +57,7 @@ const News = ({ news }) => {
                 slidesToScroll: 1,
                 infinite: true,
                 dots: false,
-                autoplay: false,
+                autoplay: true,
                 autoplaySpeed: 1500,
             }
             },
@@ -68,7 +68,7 @@ const News = ({ news }) => {
                 slidesToScroll: 1,
                 infinite: true,
                 dots: false,
-                autoplay: false,
+                autoplay: true,
                 autoplaySpeed: 1500,
             }
             },
@@ -79,7 +79,7 @@ const News = ({ news }) => {
                 slidesToScroll: 1,
                 infinite: true,
                 dots: false,
-                autoplay: false,
+                autoplay: true,
                 autoplaySpeed: 1500,
             }
             },
@@ -90,7 +90,7 @@ const News = ({ news }) => {
                 slidesToScroll: 1,
                 infinite: true,
                 dots: false,
-                autoplay: false,
+                autoplay: true,
                 autoplaySpeed: 1500,
             }
             },
