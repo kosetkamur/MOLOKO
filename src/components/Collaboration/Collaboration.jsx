@@ -15,26 +15,44 @@ const Collaboration = () => {
 
     useEffect(() => {
         let arrow = document.querySelector('.image1')
-        if(list === true){
+
+        if(list){
             arrow.classList.add('imgRotate')
         } else {
             arrow.classList.remove('imgRotate')
         }
 
         let arrow2 = document.querySelector('.image2')
-        if(list2 === true){
+        if(list2){
             arrow2.classList.add('imgRotate')
         } else {
             arrow2.classList.remove('imgRotate')
         }
 
         let arrow3 = document.querySelector('.image3')
-        if(list3 === true){
+        if(list3){
             arrow3.classList.add('imgRotate')
         } else {
             arrow3.classList.remove('imgRotate')
         }
     }, [list, list2, list3])
+
+
+    let acc = document.getElementsByClassName("drop-down_item__title");
+    let i;
+
+    for (i = 0; i < acc.length; i++) {
+        console.log('yyy', acc[i])
+        acc[i].addEventListener("click", function() {
+            console.log('xxx', acc[i])
+            // let panel = this.nextElementSibling;
+            // if (panel.style.maxHeight){
+            //     panel.style.maxHeight = null;
+            // } else {
+            //     panel.style.maxHeight = panel.scrollHeight + "px";
+            // }
+        });
+    }
 
 
     return (
@@ -55,7 +73,7 @@ const Collaboration = () => {
                             <img src={arrow} alt="стрелочка" className="image1"/>
                         </div>
 
-                        <div className="drop-down_item__list open">
+                        <div className="drop-down_item__list">
                             { list && <Cooperation />}
                         </div>
                     </div>
@@ -64,7 +82,6 @@ const Collaboration = () => {
                             <h4>Условия оплаты</h4>
                             <img src={arrow} alt="стрелочка" className="image2"/>
                         </div>
-
                         <div className="drop-down_item__list">
                             { list2 && <Payment />}
                         </div>

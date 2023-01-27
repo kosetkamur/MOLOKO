@@ -5,7 +5,7 @@ import axios from 'axios';
 import './FormPopup.sass'
 import close from '../../../media/img/close.svg'
 import Agreement from "../../Form/Submit/Agreement/Agreement";
-import PhoneMask from "../PhoneMask/Phone";
+import PhoneMask from "../../PhoneMask/Phone";
 
 
 
@@ -104,20 +104,20 @@ const FormPopup = ({ handleClose }) => {
                                        onChange={ handleInputChange }
                                        required/>
                             </div>
-                            {/*<div className="form-items__item item3">*/}
-                            {/*    <label htmlFor='contact_phone'>Ваш телефон*</label>*/}
-                            {/*    /!*<input type='tel'*!/*/}
-                            {/*    /!*       name='contact_phone'*!/*/}
-                            {/*    /!*       placeholder='+7 (   ) __-__-__ '*!/*/}
-                            {/*    /!*       className="form-input"*!/*/}
-                            {/*    /!*       value={ data.contact_phone || "" }*!/*/}
-                            {/*    /!*       onChange={ handleInputChange }/>*!/*/}
+                            <div className="form-items__item item3">
+                                <label htmlFor='contact_phone'>Ваш телефон*</label>
+                                {/*<input type='tel'*/}
+                                {/*       name='contact_phone'*/}
+                                {/*       placeholder='+7 (   ) __-__-__ '*/}
+                                {/*       className="form-input"*/}
+                                {/*       value={ data.contact_phone || "" }*/}
+                                {/*       onChange={ handleInputChange }/>*/}
 
-                            {/*    <PhoneMask name='contact_phone'*/}
-                            {/*        value={data.contact_phone }*/}
-                            {/*        onChange={ handleInputChange }>*/}
-                            {/*    </PhoneMask>*/}
-                            {/*</div>*/}
+                                <PhoneMask name='contact_phone'
+                                    value={data.contact_phone }
+                                    onChange={ handleInputChange }>
+                                </PhoneMask>
+                            </div>
                             <div className="form-items__item item4">
                                 <label htmlFor='email'>Ваша почта*</label>
                                 <input type='email'

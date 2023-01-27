@@ -4,10 +4,6 @@ const Fact = ({ fact }) => {
 
     const [ num, setNum ] = useState(0);
 
-    useEffect(()=>{
-        NumberCount(temp)
-    }, [fact])
-
     let temp = fact.number;
     let step;
     if(temp < 21){
@@ -20,12 +16,12 @@ const Fact = ({ fact }) => {
         step = 200;
     }
     let start=0;
-    const time = 2000;
+    const time = 3000;
 
     function NumberCount (temp) {
         let t = Math.round(time/(num/step));
         let interval = setInterval(()=>{
-            start = start + step;
+            start += step;
             if(start === temp) {
                 clearInterval(interval);
             }
@@ -33,10 +29,14 @@ const Fact = ({ fact }) => {
         }, t)
     }
 
+    useEffect(()=>{
+        NumberCount(temp)
+    }, [fact])
+
 
     return (
         <div className="facts__item">
-            <p className="facts__item_num num1">{ num }</p>
+            <p className="facts__item_num">{ num }</p>
             <p className="facts__item_text">{ fact.title }</p>
         </div>
     );

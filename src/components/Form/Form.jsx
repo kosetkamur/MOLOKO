@@ -5,6 +5,7 @@ import InputMask from 'react-input-mask';
 import './Form.sass'
 import clip from '../../media/img/clip.svg'
 import Submit from "./Submit/Submit";
+import PhoneMask from "../PhoneMask/Phone";
 
 const Form = () => {
     const fileInput = React.createRef();
@@ -32,6 +33,7 @@ const Form = () => {
         formdata.append('comment', data.comment);
         formdata.append('document', fileInput.current.files[0]);
 
+        console.log()
         axios({
             method: "post",
             url: "http://zinchi5d.beget.tech/api/bids.cooperation.create",
@@ -103,13 +105,17 @@ const Form = () => {
                             </div>
                             <div className="form-items__item item2">
                                 <label htmlFor='contact_phone'>Ваш телефон*</label>
-                                <input type='tel'
-                                       name='contact_phone'
-                                       placeholder='+7 (   ) __-__-__ '
-                                       className="form-input"
-                                       value={ data.contact_phone || "" }
-                                       onChange={ handleInputChange }
-                                       required/>
+                                {/*<input type='tel'*/}
+                                {/*       name='contact_phone'*/}
+                                {/*       placeholder='+7 (   ) __-__-__ '*/}
+                                {/*       className="form-input"*/}
+                                {/*       value={ data.contact_phone || "" }*/}
+                                {/*       onChange={ handleInputChange }*/}
+                                {/*       required/>*/}
+                                <PhoneMask name='contact_phone'
+                                           value={data.contact_phone }
+                                           onChange={ handleInputChange }>
+                                </PhoneMask>
                             </div>
                             <div className="form-items__item item3">
                                 <label htmlFor='email'>Ваша почта*</label>
