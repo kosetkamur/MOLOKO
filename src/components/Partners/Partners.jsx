@@ -39,6 +39,35 @@ const Partners = () => {
                                        </div>
                             }) : ""
                     }
+                    {
+                        (typeof partners == 'object') ?
+                            partners.map((partner, index) => {
+                                let url = backendHost + partner.logo;
+                                return <div className="logo" key={ index }>
+                                    <img src={ url } alt='лого'/>
+                                </div>
+                            }) : ""
+                    }
+                </div>
+                <div className="logos__line2">
+                    {
+                        (typeof partners == 'object') ?
+                            partners.map((partner, index) => {
+                                let url = backendHost + partner.logo;
+                                return <div className="logo" key={ index }>
+                                            <img src={ url } alt='лого'/>
+                                       </div>
+                            }) : ""
+                    }
+                    {
+                        (typeof partners == 'object') ?
+                            partners.map((partner, index) => {
+                                let url = backendHost + partner.logo;
+                                return <div className="logo" key={ index }>
+                                    <img src={ url } alt='лого'/>
+                                </div>
+                            }) : ""
+                    }
                 </div>
             </div>
         </div>

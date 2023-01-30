@@ -19,8 +19,8 @@
       width: 800px
       margin: 0 auto
       .title
-        padding-top: 100px
-        padding-bottom: 64px
+        padding-top: 90px
+        padding-bottom: 30px
         h3
           color: rgba(69, 87, 115, 0.5)
         h2
@@ -36,7 +36,7 @@
           a
             color: #455773
             width: 390px
-            padding: 10px 0 30px 0
+            padding: 10px 0 50px 0
           input:hover
             background-color: #6793BB
             transition: 0.3s
@@ -57,12 +57,13 @@
             color: #455773
             padding: 10px 0
             text-align: center
-            width: 390px
+            width: 100%
+            max-width: 390px
         .form-items
           display: grid
           grid-template-columns: repeat(2, 390px)
           grid-template-rows: repeat(3, auto)
-          padding-bottom: 3%
+          padding-bottom: 6%
           .item1
             grid-column: 1 / 2
             grid-row: 1 / 2
@@ -91,6 +92,7 @@
               line-height: 22px
               color: #455773
               display: block
+              margin-top: 34px
             .form-input
               width: 360px
               height: 34px
@@ -98,7 +100,6 @@
               border: none
               border-bottom: 2px solid #6793BB
               display: block
-              margin-bottom: 34px
             .field__file
               opacity: 0
               visibility: hidden
@@ -109,6 +110,7 @@
               align-items: center
               flex-wrap: wrap
               position: relative
+              margin-top: 0!important
             .field__file-fake
               padding: 8px 10px 8px 1px
               width: 353px
@@ -172,7 +174,7 @@
     width: 631px
     margin-left: -365px
     .form-container
-      width: 500px
+      width: 560px
       form .form-items
         grid-template-columns: repeat(2, 290px)
       form .form-items__item
@@ -236,14 +238,13 @@
               grid-column: 1 / 2
               grid-row: 7 / 8
           .form-items__item
-            .field__file-fake
-              margin-bottom: 27px
             .form-input
               width: 401px
             .field__file-fake
               width: 392px
             .field__file-button
               right: 22px
+
 
 @media only screen and (max-width: 570px)
   .form-cooperation .form .form-container form

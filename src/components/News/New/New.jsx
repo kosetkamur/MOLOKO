@@ -1,5 +1,4 @@
 import React from 'react';
-import NewPopup from "../../NewPopup";
 
 const New = ({ data, openArticle }) => {
 

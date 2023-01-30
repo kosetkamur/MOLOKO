@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './CollaborationItem.sass'
+
 const CollaborationItem = ({ data, index }) => {
     return (
         <div className="list_item">

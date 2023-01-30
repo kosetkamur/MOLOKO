@@ -3,7 +3,8 @@ import InputMask from "react-input-mask";
 
 const Phone = (props) => {
     return (
-        <InputMask name={ props.name }
+        <InputMask id={ props.id }
+                   name={ props.name }
                    mask='+7(999)999-99-99'
                    value={ props.value }
                    onChange={ props.onChange }>

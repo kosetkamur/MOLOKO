@@ -7,194 +7,55 @@
     width: 1200px
     height: auto
     margin: 0 auto
-  .drop-down
-    margin-top: 5%
-    .drop-down_next
-      margin-top: -18px
-    &_item
-      &__title
-        width: 100%
-        border-top: 1px solid #ffffff50
-        border-bottom: 1px solid #ffffff50
-        box-sizing: content-box
-        padding: 18px 0
-        display: flex
-        flex-direction: row
-        justify-content: space-between
-        cursor: pointer
-        transition: 0.3s
-        h4
-          padding-left: 8px
-        .image1.imgRotate
-          transform: rotate(180deg)
-          padding-left: 8px
-          padding-right: 0
-          transition: 0.3s
-        .image1
-          width: 32px
-          height: 32px
-          margin: 0
-          padding-right: 8px
-          transition: 0.3s
-        .image2.imgRotate
-          transform: rotate(180deg)
-          padding-left: 8px
-          padding-right: 0
-          transition: 0.3s
-        .image2
-          width: 32px
-          height: 32px
-          margin: 0
-          padding-right: 8px
-          transition: 0.3s
-        .image3.imgRotate
-          transform: rotate(180deg)
-          padding-left: 8px
-          padding-right: 0
-          transition: 0.3s
-        .image3
-          width: 32px
-          height: 32px
-          margin: 0
-          padding-right: 8px
-          transition: 0.3s
-      &__list
 
-        margin: 18px 0
-        transition: max-height 0.3s ease-out
-        .list_item
-          display: flex
-          flex-direction: row
-          padding-bottom: 16px
-          padding-left: 32px
-          transition: 0.3s
-          &__circle
-            min-width: 50px
-            width: 50px
-            height: 50px
-            background: rgba(255, 255, 255, 0.1)
-            border-radius: 100px
+.accordion
+  max-width: 1200px
+  margin: 0 auto
+  padding-top: 30px
 
-            display: flex
-            justify-content: center
-            align-items: center
-            font-weight: 600
-            font-size: 18px
-            color: #FFFFFF
-            align-content: center
-          p
-            width: 600px
-            display: flex
-            align-items: center
-            padding-left: 24px
+.accordion__heading
+  display: block
+  position: relative
+  cursor: pointer
+  padding: 18px 8px
+  margin: 0
+  background: transparent
+  color: white
+  border-top: 1px solid #ffffff50
+  border-bottom: 1px solid #ffffff50
+  font-weight: 600
+  font-size: 24px
 
+.accordion__heading:before
+  content: url("../../media/img/arrow.svg")
+  position: absolute
+  width: 12px
+  height: 3px
+  top: 35%
+  right: 25px
+  transition: all 0.1s
 
+.accordion__checkbox:checked~.accordion__heading:before
+  transform: rotate(180deg)
+  top: 70%
+  right: 10px
 
+.accordion__checkbox
+  display: none
+  position: absolute
+  left: -9999em
+
+.accordion__checkbox:checked~.accordion__content
+  max-height: 1000px
+  transition: all 2s
+  padding: 25px
+
+.accordion__content
+  max-height: 0
+  overflow: hidden
+  padding: 0 25px
+  transition: all 0.5s
 
 @media only screen and (max-width : 1024px)
-  .collaboration .drop-down_item__title
-    .image1
-      width: 20px
-      height: 20px
-    .image2
-      width: 20px
-      height: 20px
-    .image3
-      width: 20px
-      height: 20px
-  .collaboration .drop-down_item__list .list_item__circle
-    width: 45px
-    height: 45px
-    min-width: 45px
-    font-size: 17px
-  .collaboration .drop-down
-    margin-top: 30px
-
-@media only screen and (max-width : 768px)
-  .collaboration .container
-    width: 600px!important
-  .collaboration .drop-down_item__list .list_item p
-    width: 450px
-
-@media only screen and (max-width : 700px)
-  .collaboration .drop-down_item__list .list_item p
-    width: 400px
-
-@media only screen and (max-width : 650px)
-  .collaboration .container
-    width: 500px!important
-  .collaboration .drop-down_item__list .list_item p
-    width: 350px
-    padding-left: 20px
-
-@media only screen and (max-width : 610px)
-  .collaboration .drop-down_item__title
-    .image1
-      width: 18px
-      height: 18px
-    .image2
-      width: 18px
-      height: 18px
-    .image3
-      width: 18px
-      height: 18px
-
-  .collaboration .drop-down_item__list .list_item__circle
-    width: 40px
-    height: 40px
-    min-width: 40px
-    font-size: 15px
-  .collaboration .drop-down_item__list .list_item
-    padding-left: 20px
-
-@media only screen and (max-width : 550px)
-  .collaboration .container
-    width: 450px!important
-  .collaboration .drop-down_item__list .list_item p
-    width: 280px
-
-@media only screen and (max-width : 500px)
-  .collaboration .container
-    width: 400px!important
-  .collaboration .drop-down_item__list .list_item p
-    width: 250px
-    padding-left: 10px
-
-@media only screen and (max-width : 450px)
-  .collaboration
-    padding: 10% 0
-    .container
-      width: 350px!important
-      .drop-down_item__list
-        .list_item
-          padding-left: 10px
-          p
-            width: 240px
-        .list_item__circle
-          width: 36px
-          height: 36px
-          min-width: 36px
-          font-size: 12px
-
-
-@media only screen and (max-width : 400px)
-  .collaboration .drop-down_item__list .list_item p
-    width: 180px
-
-@media only screen and (max-width: 375px)
-  .collaboration .container
-    width: 300px !important
-
-
-@media only screen and (max-width : 330px)
-  .collaboration .container
-    width: 290px!important
-  .collaboration .drop-down_item__list .list_item p
-    width: 150px
-
-@media only screen and (max-width : 300px)
-  .collaboration .container
-    width: 200px!important
-  .collaboration .drop-down_item__list .list_item p
-    width: 150px
-
+  .accordion__heading
+    font-size: 18px

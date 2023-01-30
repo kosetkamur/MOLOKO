@@ -1,7 +1,7 @@
 .partners
   background-color: #455773
   height: 100%
-  padding: 8% 0
+  padding: 8% 0 2% 0
   .container
     padding-top: 2%
     width: 1200px
@@ -14,20 +14,46 @@
     overflow: hidden
 
     &__line1
-      animation: logos 10s linear infinite
+      animation: logos 40s linear infinite
       display: flex
       flex-direction: row
-      padding-left: 0
+      width: 800%
+      transition: 0.3s
+      margin-bottom: 40px
       .logo
-        margin-right: 50px
+        margin-right: 20px
         img
           width: 100%
+          margin-right: 20px
+    &__line2
+      animation: logos2 40s linear infinite
+      display: flex
+      flex-direction: row
+      width: 800%
+      transition: 0.3s
+      .logo
+        margin-right: 20px
+        img
+          width: 100%
+          margin-right: 20px
+
+
 
 @keyframes logos
   0%
-    transform: translateX(0px)
+    transition: 0.3s
+    transform: translateX(0)
   100%
-    transform: translateX(-135%)
+    transition: 0.3s
+    transform: translateX(-50%)
+
+@keyframes logos2
+  0%
+    transition: 0.3s
+    transform: translateX(-50%)
+  100%
+    transition: 0.3s
+    transform: translateX(0)
 
 
 @media only screen and (max-width : 768px)
@@ -37,12 +63,17 @@
       width: 100%
 
 @media only screen and (max-width : 600px)
-  .partners .logos__line1 .logo
-    margin-right: 30px
-    margin-top: 10px
+  .partners .logos__line1
+    margin-bottom: 20px
+    .logo
+      margin-right: 30px
+      margin-top: 10px
     img
       width: 100%
 
 @media only screen and (max-width : 450px)
-  .partners .container .title
+  .partners
+    .logos__line1, .logos__line2
+      width: 1000%
+    .container .title
     padding-bottom: 30px

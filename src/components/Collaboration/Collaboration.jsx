@@ -1,59 +1,42 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 
 import './Collaboration.sass'
-import arrow from '../../media/img/arrow.svg'
 import Cooperation from "./Cooperation/Cooperation";
 import Payment from "./Payment/Payment";
 import Delivery from "./Delivery/Delivery";
 
 const Collaboration = () => {
 
-    const [ list, setList ] = useState(true);
-    const [ list2, setList2 ] = useState(false);
-    const [ list3, setList3 ] = useState(false);
-
-
-    useEffect(() => {
-        let arrow = document.querySelector('.image1')
-
-        if(list){
-            arrow.classList.add('imgRotate')
-        } else {
-            arrow.classList.remove('imgRotate')
-        }
-
-        let arrow2 = document.querySelector('.image2')
-        if(list2){
-            arrow2.classList.add('imgRotate')
-        } else {
-            arrow2.classList.remove('imgRotate')
-        }
-
-        let arrow3 = document.querySelector('.image3')
-        if(list3){
-            arrow3.classList.add('imgRotate')
-        } else {
-            arrow3.classList.remove('imgRotate')
-        }
-    }, [list, list2, list3])
-
-
-    let acc = document.getElementsByClassName("drop-down_item__title");
-    let i;
-
-    for (i = 0; i < acc.length; i++) {
-        console.log('yyy', acc[i])
-        acc[i].addEventListener("click", function() {
-            console.log('xxx', acc[i])
-            // let panel = this.nextElementSibling;
-            // if (panel.style.maxHeight){
-            //     panel.style.maxHeight = null;
-            // } else {
-            //     panel.style.maxHeight = panel.scrollHeight + "px";
-            // }
-        });
-    }
-
+    //
+    // const [ cooperation, setCooperation ] = useState({});
+    //
+    // const types = {
+    //     cooperation: {
+    //         title: 'Условия сотрудничества',
+    //     },
+    //     delivery: {
+    //         title:  'Условия оплаты',
+    //     },
+    //     payment: {
+    //         title: 'Доставка',
+    //     },
+    // }
+    //
+    // useEffect(() => {
+    //     for (let key in types){
+    //         const fetch = async() => {
+    //             try{
+    //                 let url = 'http://zinchi5d.beget.tech/api/cooperation.terms?type='+key;
+    //                 let getData = await axios.get(url);
+    //                 return getData.data.data;
+    //             } catch (e) {
+    //                 alert(e)
+    //             }
+    //         }
+    //         fetch().then(res => setCooperation({ ...cooperation, [key]: res }))
+    //     }
+    // },[]);
+    // console.log(cooperation)
 
     return (
         <section className="collaboration" id="collaboration">
@@ -66,36 +49,28 @@ const Collaboration = () => {
                         сотрудничества
                     </h2>
                 </div>
-                <div className="drop-down">
-                    <div className="drop-down_item" onClick={ ()=> setList(e => !e) }>
-                        <div className="drop-down_item__title">
-                            <h4>Условия сотрудничества</h4>
-                            <img src={arrow} alt="стрелочка" className="image1"/>
+                <div className="accordion">
+                    <section>
+                        <input type="checkbox" className="accordion__checkbox" id="accordion-heading-1" />
+                        <label className="accordion__heading" htmlFor="accordion-heading-1">Условия сотрудничества</label>
+                        <div className="accordion__content">
+                            <Cooperation />
                         </div>
-
-                        <div className="drop-down_item__list">
-                            { list && <Cooperation />}
+                    </section>
+                    <section>
+                        <input type="checkbox" className="accordion__checkbox" id="accordion-heading-2" />
+                        <label className="accordion__heading" htmlFor="accordion-heading-2">Условия оплаты</label>
+                        <div className="accordion__content">
+                            <Payment />
                         </div>
-                    </div>
-                    <div className="drop-down_item drop-down_next" onClick={ ()=> setList2(e => !e) }>
-                        <div className="drop-down_item__title">
-                            <h4>Условия оплаты</h4>
-                            <img src={arrow} alt="стрелочка" className="image2"/>
+                    </section>
+                    <section>
+                        <input type="checkbox" className="accordion__checkbox" id="accordion-heading-3" />
+                        <label className="accordion__heading" htmlFor="accordion-heading-3">Доставка</label>
+                        <div className="accordion__content">
+                            <Delivery />
                         </div>
-                        <div className="drop-down_item__list">
-                            { list2 && <Payment />}
-                        </div>
-                    </div>
-                    <div className="drop-down_item drop-down_next" onClick={ ()=> setList3(e => !e) }>
-                        <div className="drop-down_item__title">
-                            <h4>Доставка</h4>
-                            <img src={arrow} alt="стрелочка" className="image3"/>
-                        </div>
-
-                        <div className="drop-down_item__list">
-                            { list3 && <Delivery />}
-                        </div>
-                    </div>
+                    </section>
                 </div>
             </div>
         </section>

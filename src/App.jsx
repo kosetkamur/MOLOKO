@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 
 import './App.sass'
 
@@ -13,20 +13,8 @@ import Contacts from "./components/Contacts";
 import Maps from "./components/Map/Maps";
 import Catalog from "./components/Catalog/Catalog";
 
-import GetData from "./api/getData";
-
 
 function App() {
-  const [ news, setNews ] = useState('');
-
-      useEffect(() => {
-          GetData.getNews().then(resp => {
-              setNews(resp);
-          });
-      }, []);
-
-
-
   return (
     <div className="body">
         <Header />
@@ -36,7 +24,7 @@ function App() {
         <Provider />
         <Form />
         <Partners />
-        <News news={ news }/>
+        <News/>
         <Maps />
         <Contacts />
     </div>

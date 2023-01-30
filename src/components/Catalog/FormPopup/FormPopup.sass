@@ -54,10 +54,10 @@
           font-weight: 600
           font-size: 18px
           color: #FFFFFF
-          input
-            -webkit-appearance: none
-            -moz-appearance: none
-            appearance: none
+        input
+          -webkit-appearance: none
+          -moz-appearance: none
+          appearance: none
         a
           font-family: 'Montserrat',sans-serif
           font-style: normal
@@ -79,12 +79,14 @@
           .item2
             grid-column: 1 / 2
             grid-row: 2 / 3
+            margin-top: 35px
           .item3
             grid-column: 2 / 3
             grid-row: 1 / 2
           .item4
             grid-column: 2 / 3
             grid-row: 2 / 3
+            margin-top: 35px
           &__item
             label
               font-family: 'Montserrat', sans-serif
@@ -101,7 +103,7 @@
               border: none
               border-bottom: 2px solid #6793BB
               display: block
-              margin-bottom: 35px
+
 
 
 
@@ -188,6 +190,8 @@
       height: 600px
       .form-container
         width: 500px
+        .form-title button
+          padding: 0
         form
           width: 500px
           .form-items
@@ -196,15 +200,19 @@
             .item1
               grid-column: 1 / 2
               grid-row: 1 / 2
+              margin-top: -20px
             .item2
               grid-column: 1 / 2
               grid-row: 2 / 3
+              margin-top: 20px
             .item3
               grid-column: 1 / 2
               grid-row: 3 / 4
+              margin-top: 20px
             .item4
               grid-column: 1 / 2
               grid-row: 5 / 6
+              margin-top: 20px
 
           .form-items__item .form-input
              width: 100%

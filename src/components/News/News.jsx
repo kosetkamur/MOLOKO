@@ -4,11 +4,19 @@ import Slider from "react-slick";
 import './News.sass'
 import New from "./New/New";
 import NewPopup from "../NewPopup";
+import GetData from "../../api/getData";
 
-const News = ({ news }) => {
+const News = () => {
 
     const [ article, setArticle ] = useState(false);
     const [ temp, setTemp ] = useState({});
+    const [ news, setNews ] = useState('');
+
+    useEffect(() => {
+        GetData.getNews().then(resp => {
+            setNews(resp);
+        });
+    }, []);
 
 
     const openArticle = ( data ) => {
@@ -121,4 +129,4 @@ const News = ({ news }) => {
     );
 };
 
-export default News;
+export default React.memo(News);

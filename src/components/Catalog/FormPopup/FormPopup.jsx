@@ -6,6 +6,7 @@ import './FormPopup.sass'
 import close from '../../../media/img/close.svg'
 import Agreement from "../../Form/Submit/Agreement/Agreement";
 import PhoneMask from "../../PhoneMask/Phone";
+import Load from "../../Load/Load";
 
 
 
@@ -18,10 +19,14 @@ const FormPopup = ({ handleClose }) => {
         company_name: ""
     }
 
-    const [ data, setData ] = useState({initialState})
+    const [ data, setData ] = useState({initialState});
+    const [ response, setResponse ] = useState({});
+    const [ isLoading, setIsLoading ] = useState(false);
 
     const handleSubmit = e => {
         e.preventDefault();
+
+        setIsLoading(true);
 
         let formData = new FormData();
         formData.append('name', data.name);
@@ -29,28 +34,39 @@ const FormPopup = ({ handleClose }) => {
         formData.append('email', data.email);
         formData.append('company_name', data.company_name);
 
-
-
         axios({
             method: "post",
             url: "http://zinchi5d.beget.tech/api/bids.price_list.create",
             data: formData,
             headers: { "Content-Type": "text/html; charset=utf-8" },
         })
-            .then(function (response) {
-                console.log(response);
+            .then(res => {
+                setIsLoading(false);
+                setResponse(res);
+            }, res => {
+                setIsLoading(false);
+                setResponse(res);
             })
             .catch(function (response) {
                 console.log(response);
             });
 
-        setData({
-            ...data,
-            name: "",
+        setData({name: "",
             contact_phone: "",
             email: "",
-            company_name: ""
-        })
+            company_name: ""});
+    }
+    let emailError="";
+    let phoneError="";
+    let res = response.response;
+    if(res!==undefined && res.status === 400){
+        let field = res.data.field_problems;
+        if(field.email){
+            emailError = field.email
+        }
+        if(field.contact_phone){
+            phoneError = field.contact_phone
+        }
     }
 
     const handleInputChange = (event) => {
@@ -61,7 +77,6 @@ const FormPopup = ({ handleClose }) => {
     const handlePopupClose = () => {
         handleClose()
     }
-
 
 
     return (
@@ -106,17 +121,12 @@ const FormPopup = ({ handleClose }) => {
                             </div>
                             <div className="form-items__item item3">
                                 <label htmlFor='contact_phone'>Ваш телефон*</label>
-                                {/*<input type='tel'*/}
-                                {/*       name='contact_phone'*/}
-                                {/*       placeholder='+7 (   ) __-__-__ '*/}
-                                {/*       className="form-input"*/}
-                                {/*       value={ data.contact_phone || "" }*/}
-                                {/*       onChange={ handleInputChange }/>*/}
-
                                 <PhoneMask name='contact_phone'
+                                           id="contact_phone"
                                     value={data.contact_phone }
                                     onChange={ handleInputChange }>
                                 </PhoneMask>
+                                <p style={{color:'red',fontSize: '12px'}}>{ phoneError }</p>
                             </div>
                             <div className="form-items__item item4">
                                 <label htmlFor='email'>Ваша почта*</label>
@@ -126,14 +136,20 @@ const FormPopup = ({ handleClose }) => {
                                        className="form-input"
                                        value={ data.email || "" }
                                        onChange={ handleInputChange }
+                                       id="email"
                                        required/>
+                                <p style={{color:'red',fontSize: '12px'}}>{ emailError }</p>
                             </div>
                         </div>
                         <input type='submit' name='submit' value='Запросить прайс-лист' className="form-submit" />
+                        {
+                            (response.status===200) ? <p style={{color:'green', fontSize: '16px',marginTop: '10px',textAlign:'center'}}>Ваша заявка успешно отправлена</p> : ''
+                        }
                         <Agreement />
                     </form>
                 </div>
             </div>
+            { isLoading && <Load isLoading={ isLoading }/> }
         </div>
     );
 };

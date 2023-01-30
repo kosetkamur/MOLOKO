@@ -1,31 +1,29 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import InputMask from 'react-input-mask';
 
 import './Form.sass'
 import clip from '../../media/img/clip.svg'
 import Submit from "./Submit/Submit";
 import PhoneMask from "../PhoneMask/Phone";
+import Load from "../Load/Load";
+import {initialState} from "../../const";
 
 const Form = () => {
     const fileInput = React.createRef();
 
-    let initialState = {
-        full_name: "",
-        contact_phone: "",
-        email: "",
-        company_name: "",
-        comment: "",
-    }
-
     const [ file, setFile ] = useState('Прикрепите файл в формате PDF');
     const [ data, setData ] = useState(initialState);
-    const [ response, setResponse ] = useState(false);
+    const [ response, setResponse ] = useState({});
+    const [ isLoading, setIsLoading ] = useState(false);
+
+
 
     const handleSubmit = event => {
         event.preventDefault();
 
-        var formdata = new FormData();
+        setIsLoading(true);
+
+        let formdata = new FormData();
         formdata.append('full_name', data.full_name);
         formdata.append('contact_phone', data.contact_phone);
         formdata.append('email', data.email);
@@ -33,29 +31,27 @@ const Form = () => {
         formdata.append('comment', data.comment);
         formdata.append('document', fileInput.current.files[0]);
 
-        console.log()
         axios({
             method: "post",
             url: "http://zinchi5d.beget.tech/api/bids.cooperation.create",
             data: formdata,
             headers: { "Content-Type": "multipart/form-data" },
         })
-            .then(function (res) {
-                setResponse(true)
-                console.log(res);
+            .then(res => {
+                setIsLoading(false);
+                setResponse(res);
+            }, res => {
+                setIsLoading(false);
+                setResponse(res);
             })
-            .catch(function (res) {
-                console.log(res);
-            });
+            .catch(res => console.log(res));
 
-        setData({
-            full_name: "",
+        setData({ full_name: "",
             contact_phone: "",
             email: "",
             company_name: "",
-            comment: "",
-        })
-        setFile('Файл не выбран');
+            comment: ""})
+        setFile('Прикрепите файл в формате PDF');
     }
 
     const handleInputChange = (event) => {
@@ -63,22 +59,29 @@ const Form = () => {
         setData({...data, [name]: value})
     }
 
-
-
-
     let fields = document.querySelectorAll('.field__file');
     Array.prototype.forEach.call(fields, function (input) {
         input.addEventListener('change', function (e) {
-            let countFiles = 0;
-            if (this.files && this.files.length >= 1)
-                countFiles = this.files.length;
-            if (countFiles)
-                setFile(`Выбрано файлов: ${countFiles}`)
+            if (this.files)
+                setFile(`Файл выбран`)
         });
     });
 
+    let emailError="";
+    let phoneError="";
+    let res = response.response;
+    if(res!==undefined && res.status === 400){
+        let field = res.data.field_problems;
+        if(field.email){
+            emailError = field.email
+        }
+        if(field.contact_phone){
+            phoneError = field.contact_phone
+        }
+    }
 
     return (
+        <>
         <div className="form-cooperation" id="form">
             <div className="form">
                 <div className="form-container">
@@ -94,7 +97,7 @@ const Form = () => {
                     <form onSubmit={ handleSubmit }>
                         <div className="form-items">
                             <div className="form-items__item item1">
-                                <label htmlFor='full_name'>Ваше имя</label>
+                                <label htmlFor='full_name'>Ваше имя*</label>
                                 <input type='text'
                                        name='full_name'
                                        placeholder='Имя'
@@ -105,17 +108,11 @@ const Form = () => {
                             </div>
                             <div className="form-items__item item2">
                                 <label htmlFor='contact_phone'>Ваш телефон*</label>
-                                {/*<input type='tel'*/}
-                                {/*       name='contact_phone'*/}
-                                {/*       placeholder='+7 (   ) __-__-__ '*/}
-                                {/*       className="form-input"*/}
-                                {/*       value={ data.contact_phone || "" }*/}
-                                {/*       onChange={ handleInputChange }*/}
-                                {/*       required/>*/}
                                 <PhoneMask name='contact_phone'
                                            value={data.contact_phone }
                                            onChange={ handleInputChange }>
                                 </PhoneMask>
+                                <p style={{color:'red',fontSize: '12px'}}>{ phoneError }</p>
                             </div>
                             <div className="form-items__item item3">
                                 <label htmlFor='email'>Ваша почта*</label>
@@ -126,9 +123,10 @@ const Form = () => {
                                        value={ data.email || "" }
                                        onChange={ handleInputChange }
                                        required/>
+                                <p style={{color:'red',fontSize: '12px'}}>{ emailError }</p>
                             </div>
                             <div className="form-items__item item4">
-                                <label htmlFor='company_name'>Наименование компании</label>
+                                <label htmlFor='company_name'>Наименование компании*</label>
                                 <input type='text'
                                        name='company_name'
                                        placeholder='Компания'
@@ -138,7 +136,7 @@ const Form = () => {
                                        required/>
                             </div>
                             <div className="form-items__item item5">
-                                <label htmlFor='file'>Прикрепите файл</label>
+                                <label htmlFor='file'>Прикрепите файл*</label>
                                 <input name="file"
                                        type="file"
                                        id="field__file-2"
@@ -152,7 +150,7 @@ const Form = () => {
                                 </label>
                             </div>
                             <div className="form-items__item item6">
-                                <label htmlFor='comment'>Ваш комментарий</label>
+                                <label htmlFor='comment'>Ваш комментарий*</label>
                                 <input type='text'
                                        name='comment'
                                        placeholder='Ваш комментарий'
@@ -162,22 +160,14 @@ const Form = () => {
                                        required/>
                             </div>
                         </div>
-                        <Submit response={ response }/>
+                        <Submit response={ response } />
                     </form>
                 </div>
             </div>
         </div>
+        { isLoading && <Load isLoading={ isLoading }/> }
+    </>
     );
 };
 
-function PhoneInput(props) {
-    return (
-        <InputMask
-            mask='(+7) 999 99 99'
-            value={props.value}
-            onChange={props.onChange}>
-        </InputMask>
-    );
-}
-
-export default Form;
+export default React.memo(Form);

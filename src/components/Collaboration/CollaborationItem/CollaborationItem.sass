@@ -1,0 +1,80 @@
+.list_item
+  display: flex
+  flex-direction: row
+  padding-bottom: 16px
+  transition: 0.3s
+  &__circle
+    min-width: 50px
+    width: 50px
+    height: 50px
+    background: rgba(255, 255, 255, 0.1)
+    border-radius: 100px
+
+    display: flex
+    justify-content: center
+    align-items: center
+    font-weight: 600
+    font-size: 18px
+    color: #FFFFFF
+    align-content: center
+  p
+    width: 600px
+    display: flex
+    align-items: center
+    padding-left: 24px
+
+@media only screen and (max-width : 1024px)
+  .list_item__circle
+    width: 45px
+    height: 45px
+    min-width: 45px
+    font-size: 17px
+
+@media only screen and (max-width : 768px)
+  .list_item p
+    width: 450px
+
+@media only screen and (max-width : 700px)
+  .list_item p
+    width: 400px
+
+@media only screen and (max-width : 650px)
+  .list_item p
+    width: 350px
+    padding-left: 20px
+
+@media only screen and (max-width : 610px)
+  .list_item
+    padding-left: 20px
+    &__circle
+      width: 40px
+      height: 40px
+      min-width: 40px
+      font-size: 15px
+
+@media only screen and (max-width : 550px)
+  .list_item p
+    width: 280px
+
+@media only screen and (max-width : 500px)
+  .list_item p
+    width: 250px
+    padding-left: 10px
+@media only screen and (max-width : 450px)
+  .list_item
+    padding-left: 10px
+    p
+      width: 240px
+    &__circle
+      width: 36px
+      height: 36px
+      min-width: 36px
+      font-size: 12px
+
+@media only screen and (max-width : 400px)
+  .list_item p
+    width: 180px
+
+@media only screen and (max-width : 330px)
+  .list_item p
+    width: 150px

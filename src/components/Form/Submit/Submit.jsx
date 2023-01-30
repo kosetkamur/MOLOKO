@@ -1,16 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React  from 'react';
 import Agreement from "./Agreement/Agreement";
 
 
 
 const Submit = ({ response }) => {
-
-    let phrase =  <p style={{color: 'green'}}>Ваша заявка принята на рассмотрение</p>
-
+    let okResponse;
+    console.log(response.status)
+    if(response.status === 200){
+        okResponse = <p style={{color:'green'}}>Ваша заявка успешно отправлена</p>
+    }
     return (
         <div className="form-submit">
-            <input type='submit' name='submit' value='Отправить заявку'/>
-            { response && phrase }
+            <input type='submit' name='submit' value="Отправить заявку"/>
+            {okResponse}
             <Agreement />
         </div>
     );
