@@ -7,3 +7,9 @@ export const initialState = {
     company_name: "",
     comment: "",
 }
+export const initialCatalogState = {
+    name: "",
+    contact_phone: "",
+    email: "",
+    company_name: ""
+}

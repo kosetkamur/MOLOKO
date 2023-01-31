@@ -6,38 +6,6 @@ import Payment from "./Payment/Payment";
 import Delivery from "./Delivery/Delivery";
 
 const Collaboration = () => {
-
-    //
-    // const [ cooperation, setCooperation ] = useState({});
-    //
-    // const types = {
-    //     cooperation: {
-    //         title: 'Условия сотрудничества',
-    //     },
-    //     delivery: {
-    //         title:  'Условия оплаты',
-    //     },
-    //     payment: {
-    //         title: 'Доставка',
-    //     },
-    // }
-    //
-    // useEffect(() => {
-    //     for (let key in types){
-    //         const fetch = async() => {
-    //             try{
-    //                 let url = 'http://zinchi5d.beget.tech/api/cooperation.terms?type='+key;
-    //                 let getData = await axios.get(url);
-    //                 return getData.data.data;
-    //             } catch (e) {
-    //                 alert(e)
-    //             }
-    //         }
-    //         fetch().then(res => setCooperation({ ...cooperation, [key]: res }))
-    //     }
-    // },[]);
-
-
     return (
         <section className="collaboration" id="collaboration">
             <div className="container">

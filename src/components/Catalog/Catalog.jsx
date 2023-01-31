@@ -10,24 +10,15 @@ const Catalog = () => {
     const [ catalog, setCatalog ] = useState('');
     const [ show, setShow ] = useState(false);
 
-
     useEffect(() => {
-        GetCatalog.GetItems().then(resp => {
-            setCatalog(resp);
+        GetCatalog.GetItems().then(res => {
+            setCatalog(res);
         });
     }, []);
 
-    const buttonClick = () => {
-        setShow(true)
-    }
-
-    const handleClose = () => {
-        setShow(false)
-    }
-
     return (
         <div id="catalog">
-            { show && <FormPopup handleClose={ handleClose } />}
+            { show && <FormPopup handleClose={ () => setShow(false) } />}
             <div className="container">
                 <div className="title">
                     <h3>
@@ -43,7 +34,7 @@ const Catalog = () => {
                     }
                 </div>
                 <div className="catalog__button">
-                    <button onClick={ buttonClick }>
+                    <button onClick={ () => setShow(true) }>
                         Запросить прайс-лист
                     </button>
                 </div>

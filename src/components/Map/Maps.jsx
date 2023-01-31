@@ -25,5 +25,5 @@ const Maps = () => {
 };
 
 
-export default React.memo(Maps);
+export default Maps;
 

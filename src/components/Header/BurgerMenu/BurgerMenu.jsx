@@ -9,14 +9,6 @@ const BurgerMenu = () => {
 
     const [ hide, setHide ] = useState(false);
 
-    const handleOpenMenu = () => {
-        setHide(true)
-    }
-
-    const closeSideBar = () => {
-        setHide(false)
-    }
-
     return (
         <div className="burger-menu-container">
             <div className="nav__logo">
@@ -25,8 +17,8 @@ const BurgerMenu = () => {
                 </a>
             </div>
             {
-                (hide) ? <SideBar closeSideBar={ closeSideBar } /> :
-                    <div><button className="burger-menu" onClick={ handleOpenMenu }>
+                (hide) ? <SideBar closeSideBar={ () => setHide(false) } /> :
+                    <div><button className="burger-menu" onClick={ () => setHide(true) }>
                         <img src={ menu } alt="меню"/>
                     </button></div>
             }

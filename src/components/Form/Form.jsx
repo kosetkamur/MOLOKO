@@ -17,7 +17,6 @@ const Form = () => {
     const [ isLoading, setIsLoading ] = useState(false);
 
 
-
     const handleSubmit = event => {
         event.preventDefault();
 
@@ -44,7 +43,6 @@ const Form = () => {
                 setIsLoading(false);
                 setResponse(res);
             })
-            .catch(e => console.log(e));
 
         setData({ full_name: "",
             contact_phone: "",
@@ -61,20 +59,18 @@ const Form = () => {
 
     let fields = document.querySelectorAll('.field__file');
     Array.prototype.forEach.call(fields, function (input) {
-        input.addEventListener('change', function (e) {
+        input.addEventListener('change', function () {
             if (this.files)
                 setFile(`Файл выбран`)
         });
     });
 
-    let emailError="";
-    let phoneError="";
+    let emailError = "";
+    let phoneError = "";
     let res = response.response;
     if(res!==undefined && res.status === 400){
         let field = res.data.field_problems;
-        if(field.email){
-            emailError = field.email
-        }
+        if(field.email) emailError = field.email
         if(field.contact_phone){
             phoneError = field.contact_phone
         }

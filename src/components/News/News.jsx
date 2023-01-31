@@ -24,9 +24,6 @@ const News = () => {
         setTemp(data)
     }
 
-    const handleClose = () => {
-        setArticle(false)
-    }
 
     useEffect(() => {
         let body = document.querySelector('body');
@@ -59,28 +56,6 @@ const News = () => {
             }
             },
             {
-                breakpoint: 950,
-                    settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                infinite: true,
-                dots: false,
-                autoplay: true,
-                autoplaySpeed: 1500,
-            }
-            },
-            {
-                breakpoint: 768,
-                    settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                infinite: true,
-                dots: false,
-                autoplay: true,
-                autoplaySpeed: 1500,
-            }
-            },
-            {
                 breakpoint: 650,
                     settings: {
                 slidesToShow: 1,
@@ -91,22 +66,12 @@ const News = () => {
                 autoplaySpeed: 1500,
             }
             },
-            {
-                breakpoint: 310,
-                    settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                infinite: true,
-                dots: false,
-                autoplay: true,
-                autoplaySpeed: 1500,
-            }
-            },
+
         ]
     };
     return (
         <div id="news">
-            { article && <NewPopup  data={ temp } handleClose={ handleClose } /> }
+            { article && <NewPopup  data={ temp } handleClose={ () => setArticle(false) } /> }
             <div className="container">
                 <div className="news__title title">
                     <h3>

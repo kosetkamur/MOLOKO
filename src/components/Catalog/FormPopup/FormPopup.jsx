@@ -1,25 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-
 import './FormPopup.sass'
 import close from '../../../media/img/close.svg'
 import Agreement from "../../Form/Submit/Agreement/Agreement";
 import PhoneMask from "../../PhoneMask/Phone";
 import Load from "../../Load/Load";
-
+import {initialCatalogState} from "../../../const";
 
 
 const FormPopup = ({ handleClose }) => {
 
-    const initialState = {
-        name: "",
-        contact_phone: "",
-        email: "",
-        company_name: ""
-    }
-
-    const [ data, setData ] = useState({initialState});
+    const [ data, setData ] = useState({ initialCatalogState });
     const [ response, setResponse ] = useState({});
     const [ isLoading, setIsLoading ] = useState(false);
 
@@ -56,17 +48,13 @@ const FormPopup = ({ handleClose }) => {
             email: "",
             company_name: ""});
     }
-    let emailError="";
+    let emailError = "";
     let phoneError="";
     let res = response.response;
     if(res!==undefined && res.status === 400){
         let field = res.data.field_problems;
-        if(field.email){
-            emailError = field.email
-        }
-        if(field.contact_phone){
-            phoneError = field.contact_phone
-        }
+        if(field.email) emailError = field.email
+        if(field.contact_phone) phoneError = field.contact_phone
     }
 
     const handleInputChange = (event) => {

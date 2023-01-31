@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import './About.sass'
+
 import GetAbout from "../../api/getAbout";
 import Fact from "./Fact/Fact";
 
