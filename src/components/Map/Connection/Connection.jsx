@@ -18,15 +18,17 @@ const Connection = () => {
                 <div className="contactsData_item">
                     <img src={ email } alt="почта" />
                     <div className="contactsData_item__text">
-                        <p>
-                            moloko.optom@mail.ru
-                        </p>
+                        <a href="mailto:moloko.optom@mail.ru">
+                            <p>moloko.optom@mail.ru</p>
+                        </a>
                         <p className="bukh">
                             Бухгалтерия
                         </p>
-                        <p>
-                            opt.moloko.bukh@bk.ru
-                        </p>
+                        <a href="mailto:opt.moloko.bukh@bk.ru">
+                            <p>
+                                opt.moloko.bukh@bk.ru
+                            </p>
+                        </a>
                     </div>
                 </div>
                 <div className="contactsData_item">

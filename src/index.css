@@ -26,6 +26,8 @@ html, body{
 select,
 textarea,
 input[type="text"],
+input[type="email"],
+input[type="tel"],
 input[type="button"],
 input[type="submit"]{
     -webkit-appearance:none;
