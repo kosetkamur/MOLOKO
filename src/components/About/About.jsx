@@ -37,7 +37,7 @@ const About = () => {
                         </div>
                         <div className="facts">
                             {
-                                (typeof facts == 'object') ? data.facts.map((item, index) => <Fact fact={ item } key={ index } />) : ""
+                                (typeof facts == 'object') ? facts.map((item, index) => <Fact fact={ item } key={ index } />) : ""
                             }
                         </div>
                     </div>

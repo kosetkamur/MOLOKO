@@ -16,7 +16,7 @@
   opacity: 0
   .new
     background-color: rgba(255, 255, 255, 1)
-    height: 100%
+    height: auto
     width: 50%
     display: flex
     align-items: center
@@ -24,6 +24,7 @@
     padding: 5% 0
     overflow: auto
     .new-container
+      height: auto
       width: 85%
       margin: 0 auto
       .title
@@ -60,15 +61,15 @@
     opacity: 0
     transition: 0.3s
 
+
 @media only screen and (max-width : 1250px)
   .new-popup .new
     width: 90%
 
 @media only screen and (max-width : 600px)
   .new-popup .new .new-container p.body
-    font-size: 12px
+      font-size: 12px
 
 @media only screen and (max-width : 320px)
   .new-popup .new .new-container
     overflow: scroll
-    height: 100%

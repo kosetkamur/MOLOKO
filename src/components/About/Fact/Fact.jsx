@@ -1,24 +1,21 @@
 import React, {useEffect, useRef, useState} from 'react';
 
 const Fact = ({ fact }) => {
+
+    const [ num, setNum ] = useState(0);
     const containerRef = useRef(null);
 
-    let options = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 1.0
-    };
 
     useEffect(()=>{
-        let observer = new IntersectionObserver(NumberCount, options);
+        let observer = new IntersectionObserver(NumberCount, {
+            threshold: 0.5
+        });
         if(containerRef.current) observer.observe(containerRef.current);
+
         return () => {
             if(containerRef.current) observer.observe(containerRef.current)
         }
     }, [])
-
-
-    const [ num, setNum ] = useState(0);
 
     function NumberCount () {
         let step;
@@ -30,10 +27,15 @@ const Fact = ({ fact }) => {
         else if(temp > 21 && temp < 101) step = 10;
         else step = 200
 
-        let t = Math.round(time/(num/step));
+        let t;
+        if(num===0){
+            t=100
+        } else {
+            t = Math.round(time/(num/step));
+        }
 
         let interval = setInterval(()=>{
-            start += step;
+            start = start + step;
             if(start === temp) {
                 clearInterval(interval);
             }
@@ -43,7 +45,7 @@ const Fact = ({ fact }) => {
 
 
     return (
-        <div className="facts__item" ref={containerRef}>
+        <div className="facts__item" ref={ containerRef }>
             <p className="facts__item_num">{ num }</p>
             <p className="facts__item_text">{ fact.title }</p>
         </div>
