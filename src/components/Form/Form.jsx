@@ -44,7 +44,7 @@ const Form = () => {
                 setIsLoading(false);
                 setResponse(res);
             })
-            .catch(res => console.log(res));
+            .catch(e => console.log(e));
 
         setData({ full_name: "",
             contact_phone: "",

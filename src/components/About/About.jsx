@@ -15,6 +15,7 @@ const About = () => {
     }, []);
 
     let facts = data.facts;
+    let mapImage = (typeof data.map_image === 'string') ? 'http://zinchi5d.beget.tech' + data.map_image : ''
 
     return (
         <section className="about-company">
@@ -33,7 +34,7 @@ const About = () => {
                             <p className="subtitle">
                                 { data.description }
                             </p>
-                            <img src={ 'http://zinchi5d.beget.tech'+data.map_image } alt="Карта покупателей и поставщиков" className="mapImage"/>
+                            <img src={ mapImage } alt="Карта покупателей и поставщиков" className="mapImage"/>
                         </div>
                         <div className="facts">
                             {

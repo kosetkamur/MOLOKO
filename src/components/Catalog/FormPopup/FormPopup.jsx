@@ -47,9 +47,9 @@ const FormPopup = ({ handleClose }) => {
                 setIsLoading(false);
                 setResponse(res);
             })
-            .catch(function (response) {
-                console.log(response);
-            });
+            .catch (e =>
+                console.log(e)
+            );
 
         setData({name: "",
             contact_phone: "",

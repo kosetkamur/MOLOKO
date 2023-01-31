@@ -5,7 +5,6 @@ import Agreement from "./Agreement/Agreement";
 
 const Submit = ({ response }) => {
     let okResponse;
-    console.log(response.status)
     if(response.status === 200){
         okResponse = <p style={{color:'green'}}>Ваша заявка успешно отправлена</p>
     }

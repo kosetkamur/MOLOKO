@@ -36,7 +36,7 @@ const Collaboration = () => {
     //         fetch().then(res => setCooperation({ ...cooperation, [key]: res }))
     //     }
     // },[]);
-    // console.log(cooperation)
+
 
     return (
         <section className="collaboration" id="collaboration">
