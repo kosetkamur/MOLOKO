@@ -40,6 +40,7 @@
         display: flex
         flex-direction: column
         align-items: center
+        margin: 0 auto
         .form-submit:hover
           background-color: #6793BB
           transition: 0.3s
@@ -215,7 +216,7 @@
               margin-top: 20px
 
           .form-items__item .form-input
-             width: 100%
+             width: 99%
           .form-submit
             font-size: 16px
             width: 100%
@@ -232,9 +233,10 @@
     .form-container
       width: 90%
       form
-        width: 90%
+        width: 100%
         .form-items
-          grid-template-columns: repeat(1, 425px)
+          grid-template-columns: repeat(1, 477px)
+
 
 @media only screen and (max-width : 550px)
   .form-popup .form
@@ -242,7 +244,7 @@
     .form-container
       form
         .form-items
-          grid-template-columns: repeat(1, 390px)
+          grid-template-columns: repeat(1, 432px)
 
 @media only screen and (max-width : 500px)
   .form-popup .form
@@ -250,7 +252,7 @@
     .form-container
       form
         .form-items
-          grid-template-columns: repeat(1, 350px)
+          grid-template-columns: repeat(1, 405px)
 
 @media only screen and (max-width : 460px)
   .form-popup .form
@@ -258,7 +260,7 @@
     .form-container
       form
         .form-items
-          grid-template-columns: repeat(1, 300px)
+          grid-template-columns: repeat(1, 342px)
 
 @media only screen and (max-width : 400px)
   .form-popup .form
@@ -266,7 +268,23 @@
     .form-container
       form
         .form-items
-          grid-template-columns: repeat(1, 260px)
+          grid-template-columns: repeat(1, 286px)
+
+@media only screen and (max-width : 340px)
+  .form-popup .form
+    width: 300px
+    .form-container
+      form
+        .form-items
+          grid-template-columns: repeat(1, 269px)
+
+@media only screen and (max-width : 310px)
+  .form-popup .form
+    width: 280px
+    .form-container
+      form
+        .form-items
+          grid-template-columns: repeat(1, 252px)
 
 
 
