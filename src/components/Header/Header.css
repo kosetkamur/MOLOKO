@@ -48,7 +48,7 @@ header .header-components a {
   padding: 24px 64px;
   width: 384px;
   height: 70px;
-  background: #6793BB;
+  background: #689BCB;
   border: none;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
@@ -99,7 +99,7 @@ header .header-components a:hover {
     height: 50vh;
   }
   header .container .header-components h1 {
-    font-size: 20px;
+    font-size: 22px;
   }
   header .container .header-components a {
     width: 300px;

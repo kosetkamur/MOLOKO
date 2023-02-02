@@ -44,7 +44,7 @@
   align-items: center;
 }
 .form-cooperation .form .form-container form .form-submit input:hover {
-  background-color: #6793BB;
+  background-color: #689BCB;
   transition: 0.3s;
 }
 .form-cooperation .form .form-container form .form-submit input {
@@ -114,7 +114,7 @@
   height: 34px;
   background: #FFFFFF;
   border: none;
-  border-bottom: 2px solid #6793BB;
+  border-bottom: 2px solid #689BCB;
   display: block;
   margin-bottom: 34px;
 }
@@ -136,7 +136,7 @@
   height: 20px;
   background: #FFFFFF;
   border: none;
-  border-bottom: 2px solid #6793BB;
+  border-bottom: 2px solid #689BCB;
   font-weight: 400;
   font-size: 13px;
   color: #757575;

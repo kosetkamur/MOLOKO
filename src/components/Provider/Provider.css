@@ -14,7 +14,7 @@
 
 .provider {
   position: relative;
-  background-color: #6793BB;
+  background-color: #689BCB;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -58,7 +58,7 @@
 .provider .container .requirements__item_circle {
   width: 80px;
   height: 80px;
-  background: #6793BB;
+  background: #689BCB;
   border: 2px solid #FFFFFF;
   border-radius: 100px;
   display: flex;

@@ -29,19 +29,19 @@
 }
 .sidebar__container .nav__item .collaborationRef:hover {
   padding-right: 137px;
-  border-right: 2px solid #6793BB;
+  border-right: 2px solid #689BCB;
 }
 .sidebar__container .nav__item .catalogRef:hover {
   padding-right: 208px;
-  border-right: 2px solid #6793BB;
+  border-right: 2px solid #689BCB;
 }
 .sidebar__container .nav__item .newsRef:hover {
   padding-right: 202px;
-  border-right: 2px solid #6793BB;
+  border-right: 2px solid #689BCB;
 }
 .sidebar__container .nav__item .contactsRef:hover {
   padding-right: 195px;
-  border-right: 2px solid #6793BB;
+  border-right: 2px solid #689BCB;
 }
 
 @media only screen and (max-width: 768px) {
