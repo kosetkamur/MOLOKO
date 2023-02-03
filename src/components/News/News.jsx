@@ -38,7 +38,7 @@ const News = () => {
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 1500,
+        autoplaySpeed: 2000,
         arrows: false,
         pauseOnDotsHover: true,
         pauseOnFocus: true,
@@ -52,7 +52,7 @@ const News = () => {
                 infinite: true,
                 dots: false,
                 autoplay: true,
-                autoplaySpeed: 1500,
+                autoplaySpeed: 2000,
             }
             },
             {
@@ -61,9 +61,9 @@ const News = () => {
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 infinite: true,
-                dots: false,
+                dots: true,
                 autoplay: true,
-                autoplaySpeed: 1500,
+                autoplaySpeed: 2000,
             }
             },
 
