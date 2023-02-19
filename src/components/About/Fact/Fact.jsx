@@ -27,6 +27,8 @@ const Fact = ({ fact }) => {
         else if(temp > 21 && temp < 101) step = 10;
         else step = 200
 
+        if(temp>=5000) step = 500
+
         let t;
         if(num===0){
             t=100

@@ -14,7 +14,7 @@
 
 .provider {
   position: relative;
-  background-color: #689BCB;
+  background-color: #0144D3;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -49,8 +49,8 @@
   cursor: default;
 }
 .provider .container .requirements__item_circle:hover {
-  color: #455773;
-  border: 2px solid #455773;
+  color: #3590D6;
+  border: 2px solid #3590D6;
   transform: scale(1.15);
   transition: 0.3s;
   cursor: default;
@@ -58,7 +58,7 @@
 .provider .container .requirements__item_circle {
   width: 80px;
   height: 80px;
-  background: #689BCB;
+  background: #0144D3;
   border: 2px solid #FFFFFF;
   border-radius: 100px;
   display: flex;
