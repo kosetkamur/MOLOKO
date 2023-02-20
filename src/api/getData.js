@@ -1,5 +1,5 @@
 import axios from 'axios';
-const urlNews = 'http://zinchi5d.beget.tech/api/news.list';
+const urlNews = 'https://ooomlk.ru/api/news.list';
 
 export default class GetData {
     static async getNews() {

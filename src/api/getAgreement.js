@@ -1,5 +1,5 @@
 import axios from 'axios';
-const url = 'http://zinchi5d.beget.tech/api/core.agreement';
+const url = 'https://ooomlk.ru/api/core.agreement';
 
 
 export default class GetAgreement {

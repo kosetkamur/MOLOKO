@@ -1,5 +1,5 @@
 import axios from 'axios';
-const url = 'http://zinchi5d.beget.tech/api/core.about';
+const url = 'https://ooomlk.ru/api/core.about';
 
 
 export default class GetAbout {

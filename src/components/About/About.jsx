@@ -16,7 +16,7 @@ const About = () => {
     }, []);
 
     let facts = data.facts;
-    let mapImage = (typeof data.map_image === 'string') ? 'http://zinchi5d.beget.tech' + data.map_image : ''
+    let mapImage = (typeof data.map_image === 'string') ? 'https://ooomlk.ru' + data.map_image : ''
 
     return (
         <section className="about-company">

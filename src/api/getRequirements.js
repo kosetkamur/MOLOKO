@@ -1,5 +1,5 @@
 import axios from 'axios';
-const url = 'http://zinchi5d.beget.tech/api/cooperation.requirements.list';
+const url = 'https://ooomlk.ru/api/cooperation.requirements.list';
 
 
 export default class GetRequirements{

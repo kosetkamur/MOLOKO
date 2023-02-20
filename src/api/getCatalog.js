@@ -1,5 +1,5 @@
 import axios from 'axios';
-const url = 'http://zinchi5d.beget.tech/api/goods.list';
+const url = 'https://ooomlk.ru/api/goods.list';
 
 
 export default class GetCatalog {

@@ -32,7 +32,7 @@ const Form = () => {
 
         axios({
             method: "post",
-            url: "http://zinchi5d.beget.tech/api/bids.cooperation.create",
+            url: "https://ooomlk.ru/api/bids.cooperation.create",
             data: formdata,
             headers: { "Content-Type": "multipart/form-data" },
         })

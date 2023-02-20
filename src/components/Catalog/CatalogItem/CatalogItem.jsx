@@ -7,7 +7,7 @@ const CatalogItem = ({ catalog }) => {
     return (
         <div className="catalog__items_item">
             <div className="catalog__items_item__image">
-                <img src={ 'http://zinchi5d.beget.tech'+catalog.icon } alt="иконка категории" />
+                <img src={ 'https://ooomlk.ru'+catalog.icon } alt="иконка категории" />
             </div>
             <div className="catalog__items_item__subscribe">
             <h4>{ catalog.title }</h4>

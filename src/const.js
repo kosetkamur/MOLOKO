@@ -1,4 +1,4 @@
-export const backendHost = 'http://zinchi5d.beget.tech';
+export const backendHost = 'https://ooomlk.ru';
 
 export const initialState = {
     full_name: "",

@@ -14,7 +14,7 @@ const Agreement = () => {
     }, []);
 
     if(typeof file === 'object') {
-        agreementFile = 'http://zinchi5d.beget.tech' + file.file
+        agreementFile = 'https://ooomlk.ru' + file.file
     }
 
     return (

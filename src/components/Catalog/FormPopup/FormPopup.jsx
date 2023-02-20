@@ -28,7 +28,7 @@ const FormPopup = ({ handleClose }) => {
 
         axios({
             method: "post",
-            url: "http://zinchi5d.beget.tech/api/bids.price_list.create",
+            url: "https://ooomlk.ru/api/bids.price_list.create",
             data: formData,
             headers: { "Content-Type": "text/html; charset=utf-8" },
         })

@@ -1,5 +1,5 @@
 import axios from 'axios';
-const url = 'http://zinchi5d.beget.tech/api/cooperation.partners.list';
+const url = 'https://ooomlk.ru/api/cooperation.partners.list';
 
 
 export default class GetPartner {
