@@ -6,6 +6,7 @@ import geo from "../../../media/img/geo.svg";
 const Connection = () => {
     return (
         <div className="connection">
+            <div className="connection-wrapper">
             <div className="title">
                 <h3>
                     свяжитесь с нами
@@ -16,7 +17,9 @@ const Connection = () => {
             </div>
             <div className="contactsData">
                 <div className="contactsData_item">
-                    <img src={ email } alt="почта" />
+                    <div className="contactsData_item__img">
+                        <img src={ email } alt="почта" />
+                    </div>
                     <div className="contactsData_item__text">
                         <a href="mailto:moloko.optom@mail.ru">
                             <p>moloko.optom@mail.ru</p>
@@ -32,7 +35,9 @@ const Connection = () => {
                     </div>
                 </div>
                 <div className="contactsData_item">
-                    <img src={ tel } alt="телефон" />
+                    <div className="contactsData_item__img">
+                        <img src={ tel } alt="телефон" className="phone"/>
+                    </div>
                     <div className="contactsData_item__text">
                         <p>
                             8-495-795-77-11
@@ -49,13 +54,16 @@ const Connection = () => {
                     </div>
                 </div>
                 <div className="contactsData_item">
-                    <img src={ geo } alt="геолокация" />
+                    <div className="contactsData_item__img">
+                        <img src={ geo } alt="геолокация" />
+                    </div>
                     <div className="contactsData_item__text">
                         <p>
                             г.Москва, Горбунова д2, стр 3, помещение 2, этаж 3, комната 396
                         </p>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     );

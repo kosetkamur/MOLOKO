@@ -9,7 +9,7 @@ const Cooperation = () => {
     useEffect(() => {
         const fetch = async() => {
             try{
-                let url = 'https://ooomlk.ru/api/cooperation.terms?type=cooperation';
+                let url = 'http://zinchi5d.beget.tech/api/cooperation.terms?type=cooperation';
                 let getData = await axios.get(url);
                 setContent(getData.data.data)
                 return getData.data.data;

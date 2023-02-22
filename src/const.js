@@ -1,4 +1,4 @@
-export const backendHost = 'https://ooomlk.ru';
+export const backendHost = 'https://ooomlk.ru/';
 
 export const initialState = {
     full_name: "",

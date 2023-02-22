@@ -1,46 +1,24 @@
 import React from 'react';
 
 import './Contacts.sass'
+import {useEffect, useState} from "react";
+import GetContacts from "../../api/getContacts";
+import Contact from "./Contact/Contact";
 
 const Contacts = () => {
+    const [ contacts, setContacts ] = useState([]);
+
+    useEffect(() => {
+        GetContacts.GetNumbers().then(resp => {
+            setContacts(resp);
+        });
+    }, []);
+
     return (
         <div id="contacts">
             <div className="container">
                 <div className="contacts">
-                    <div className="contacts__item">
-                        <h4>
-                            Коммерческий отдел
-                        </h4>
-                        <div className="contacts__item_phone">
-                            <div className="number">
-                                <p>+7 (968) 944-44-16</p>
-                            </div>
-                            <div className="name">
-                                <p>Екатерина</p>
-                            </div>
-                        </div>
-                        <div className="contacts__item_phone">
-                            <div className="number">
-                                <p>+7 (963) 109-96-65</p>
-                            </div>
-                            <div className="name">
-                                <p>Игорь</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="contacts__item">
-                        <h4>
-                            Бухгалтерия
-                        </h4>
-                        <div className="contacts__item_phone">
-                            <div className="number">
-                                <p>+7 (999) 786-44-36  </p>
-                            </div>
-                            <div className="name">
-                                <p>Наталья</p>
-                            </div>
-                        </div>
-                    </div>
+                    { (typeof contacts === 'object') ? contacts.map(contact => <Contact contact={contact}/>) : ''}
                 </div>
                 <p className="footer">
                     ООО «МОЛОКО»

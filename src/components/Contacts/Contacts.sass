@@ -8,8 +8,8 @@
     height: auto
     margin: 0 auto
     .contacts
-      display: flex
-      flex-direction: row
+      display: grid
+      grid-template-columns: repeat(2,auto)
       margin-bottom: 5%
       &__item
         margin-right: 15%
@@ -24,56 +24,43 @@
             color: white
 
 
-
-
-@media only screen and (max-width : 1024px)
-  #contacts
-    .container
-      width: 800px
-
-
 @media only screen and (max-width : 950px)
   #contacts
     padding-top: 8%
-    .container
-      width: 700px
-      .contacts__item
-        margin-right: 10%
-
 
 
 @media only screen and (max-width : 820px)
   #contacts .container .contacts .contacts__item
     .contacts__item_phone
-      grid-template-columns: 140px 90px
+      grid-template-columns: 160px 90px
       gap: 5px
-    .contacts__item_phone p
-      font-size: 14px!important
 
 
-@media only screen and (max-width : 550px)
-  #contacts
-    padding: 8%
-    .container
-      .contacts .contacts__item
-        .contacts__item_phone
-          grid-template-columns: 115px 60px
-        .contacts__item_phone p
-          font-size: 12px!important
-      .contacts__item h4
-        font-size: 12px!important
-
-@media only screen and (max-width : 450px)
-  #contacts .container .contacts__item
-    margin-right: 5%
-@media only screen and (max-width : 390px)
+@media only screen and (max-width : 650px)
   #contacts
     padding-top: 5%
     .container
       .contacts
-        flex-direction: column
-      .contacts__item_phone
-        margin-bottom: 2px
+        display: grid
+        grid-template-columns: repeat(1,auto)
+        .contacts__item
+          h4
+            margin-bottom: 5px
+            margin-top: 20px
+          .contacts__item_phone
+            grid-template-columns: 140px 80px
+            margin-top: 10px
+            margin-bottom: 0
+
+
+@media only screen and (max-width : 450px)
+  #contacts
+    .container
+      .contacts
+        .contacts__item
+          .contacts__item_phone
+            margin-top: 4px
+            p
+              font-size: 12px!important
       .contacts__item h4
-        margin-bottom: 5px
-        margin-top: 20px
+        font-size: 12px!important

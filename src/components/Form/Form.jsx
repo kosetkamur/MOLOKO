@@ -44,12 +44,12 @@ const Form = () => {
                 setResponse(res);
             })
 
+        setFile('Прикрепите файл в формате PDF');
         setData({ full_name: "",
             contact_phone: "",
             email: "",
             company_name: "",
             comment: ""})
-        setFile('Прикрепите файл в формате PDF');
     }
 
     const handleInputChange = (event) => {

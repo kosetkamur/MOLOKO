@@ -9,6 +9,8 @@
   top: 0
   backdrop-filter: blur(20px)
   z-index: 4
+  transform: translateX(100%)
+  animation: sidebar 1s forwards ease-out
   &__container
     width: 90%
     .nav__item.close
@@ -36,7 +38,9 @@
         padding-left: 25px
 
 
-
+@keyframes sidebar
+  100%
+    transform: translateX(0)
 @media only screen and (max-width : 425px)
   .sidebar
     width: 70%
